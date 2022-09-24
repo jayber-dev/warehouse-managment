@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #002D62;
+}
+
+.menu {
+    padding: 20px;
+    background-color:#fecda5 ;
+
+    .menu-item {
+        padding: 20px;
+        color: black;
+    }
+}
+
+table {
+    color: #fecda5;
+    border: 1px solid grey;
+    border-style: groove;
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="index.js" defer></script>
+    <script src="../static/js/index.js" defer></script>
     <link rel="stylesheet" href="static/css/.index.css" />
     <title>warehouse Managment</title>
   </head>
@@ -46,18 +46,21 @@
         </thead>
         <tbody>
           {% for item in data %}
-          <tr>
-            <td>{{item[0]}}</td>
+          
+          <tr>       
+            <td name="wow">{{item[0]}}</td>
             <td>{{item[1]}}</td>
             <td>{{item[3]}}</td>
             <td class="description-col">{{item[2]}}</td>
             <td>{{item[4]}}</td>
             <td>{{item[5][0:10:]}}</td>
             <td>
-                <form action="/" method="post">
-                    <button type="submit">x</button></td>
+                <form action='/item_delete/{{item[1]}}' method="get">
+                <input type="submit" value="x">
                 </form>
+            </td>   
           </tr>
+        
           {% endfor %}
         </tbody>
       </table>

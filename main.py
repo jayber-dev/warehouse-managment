@@ -34,7 +34,6 @@ def index():
     res = cur.execute('''SELECT * FROM warehouse''')
     data = res.fetchall()
     cur.close()
-    print(data[0][0])
     return render_template('index.html', data=data)
 
 @app.route('/addItem',methods=['GET','POST'])
@@ -50,5 +49,16 @@ def add_item():
         return redirect(url_for('index'))
     return render_template('addItem.html')
 
+@app.route('/item_delete/<string:row_delete>',methods=['GET'])
+def item_delete(row_delete):
+    stmt = "DELETE FROM warehouse WHERE item="+"row_delete"
+    print(row_delete)
+    conn = sq.connect('data.db')
+    cur = sq.Cursor(conn)
+    cur.execute(stmt)
+    print(row_data.fetchall())
+    conn.commit()
+    return redirect(url_for('index'))
+    
 if (__name__ == '__main__'):
     app.run(debug=True)

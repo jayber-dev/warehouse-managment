@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/.index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <h1>Add Item</h1>
+      </div>
+    </header>
+    <div class="form-container">
+      <form action="/addItem" method="post">
+        <label for="">Warehouse name</label>
+        <input type="text" placeholder="Warehouse name..." />
+        <label for="">Item</label>
+        <input type="text" placeholder="Item..." />
+        <label for="">Description</label>
+        <input type="text" placeholder="Description..." />
+        <label for="">Quantity</label>
+        <input type="text" placeholder="Quantity..." />
+        <label for="">Catalog ID</label>
+        <input type="text" placeholder="Catalog ID..." />  
+        <input type="submit" />
+      </form>
+    </div>
+  </body>
+</html>

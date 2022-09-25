@@ -1,4 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
+.form-container form {
+  margin-top: 20px;
+  direction: ltr;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.form-container label {
+  color: aliceblue;
+  text-align: start;
+}
+.form-container input {
+  width: 400px;
+  margin-bottom: 40px;
+  margin-top: 0px;
+  background-color: transparent;
+  padding-top: 10px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid black;
+  color: aliceblue;
+}
+.form-container input:focus {
+  outline-style: none;
+}
+.form-container ::placeholder {
+  text-align: left;
+  color: rgb(180, 179, 179);
+}
+
+html {
+  margin: 0;
+}
+
 body {
   direction: rtl;
   margin: 0;
@@ -6,6 +41,14 @@ body {
   background-color: #002D62;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
+}
+
+.top-container {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 .header {
@@ -17,37 +60,45 @@ body {
 .header h1 {
   padding: 0px;
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 30px;
+  margin: 0px;
+  padding: 10px;
 }
 
 .menu {
-  text-align: center;
-  padding: 20px;
+  width: 100%;
+  display: flex;
+  padding: 5px;
   background-color: #fecda5;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.menu a {
+  border: 1px solid grey;
+  padding: 8px;
+  border-radius: 2px;
+  text-decoration: none;
 }
 .menu .menu-item {
-  padding: 20px;
+  margin-left: 20px;
   color: black;
 }
-
-.search {
-  margin-top: 25px;
-  text-align: center;
-}
-.search input[type=text] {
-  font-family: "Oswald", sans-serif;
+.menu .search input[type=text] {
+  font-family: "Montserrat", sans-serif;
   width: 250px;
   border-radius: 2px;
   border: 0px;
   padding: 11px;
 }
-.search input[type=submit] {
-  background-image: linear-gradient(red blue);
+.menu .search input[type=submit] {
   border-radius: 2px;
   border: 0px;
-  font-family: "Oswald", sans-serif;
-  padding: 11px;
+  font-family: "Montserrat", sans-serif;
+  padding-left: 11px;
+  padding-top: 11px;
+  padding-bottom: 11px;
   width: 60px;
 }
 
@@ -59,19 +110,34 @@ th {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 25px;
+  margin-top: 160px;
 }
 
 table, td:nth-child(even), tr, th {
+  font-weight: 400;
   text-align: center;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 15px;
   padding-right: 15px;
   color: #ffffff;
   border-collapse: collapse;
   border: 1px solid #ffffff;
   border-style: groove;
+}
+table th, td:nth-child(even) th, tr th, th th {
+  padding: 10px;
+  background-color: grey;
+  color: #272626;
+  font-weight: 600;
+}
+table tr:nth-child(odd) td, td:nth-child(even) tr:nth-child(odd) td, tr tr:nth-child(odd) td, th tr:nth-child(odd) td {
+  background-color: #ffffff;
+  color: #272626;
+}
+table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth-child(even) td, th tr:nth-child(even) td {
+  background-color: rgb(218, 214, 214);
+  color: #272626;
 }
 
 .description-col {

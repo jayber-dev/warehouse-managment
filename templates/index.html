@@ -9,46 +9,54 @@
     <title>warehouse Managment</title>
   </head>
   <body>
-    <nav>
-      <div class="header">
-        <h1>Warehouse Managment</h1>     
-      </div>
-    </nav>
-    <nav class="menu">
-        <a href="/" class="menu-item">Add item</a>
+    <div class="top-container">
+      <header>
+        <div class="header">
+          <h1>Warehouse Managment</h1>
+        </div>
+      </header>
+      <nav class="menu">
+        <a href="/addItem" class="menu-item">Add item</a>
         <a href="/" class="menu-item">Home</a>
-    </nav>
-    <div class="search">
+        <div class="search">
+            <form action="" method="get">
+              <input type="text" />
+              <input type="submit" value="Search" />
+            </form>
+          </div>
+      </nav>
+    </div>
+    <!-- <div class="search">
         <form action="" method="get">
             <input type="text">
             <input type="submit" value="search">
         </form>
-    </div>
+    </div> -->
     <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>Warehouse</th>
-              <th>Item name</th>
-              <th>Quantity</th>
-              <th>Description</th>
-              <th>Catalog #</th>
-              <th>Last modified</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for item in data %}
-            <tr>
-              <td>{{item[0]}}</td>
-              <td>{{item[1]}}</td>
-              <td>{{item[3]}}</td>
-              <td class="description-col">{{item[2]}}</td>
-              <td>{{item[4]}}</td>
-              <td>{{item[5][0:10:]}}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Warehouse</th>
+            <th>Item name</th>
+            <th>Quantity</th>
+            <th>Description</th>
+            <th>Catalog #</th>
+            <th>Last modified</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in data %}
+          <tr>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[3]}}</td>
+            <td class="description-col">{{item[2]}}</td>
+            <td>{{item[4]}}</td>
+            <td>{{item[5][0:10:]}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>

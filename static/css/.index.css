@@ -22,6 +22,22 @@
   border-bottom: 1px solid black;
   color: aliceblue;
 }
+.form-container input[type=submit] {
+  width: 80px;
+  color: aliceblue;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  border: 1px solid grey;
+  text-align: center;
+  padding: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.form-container input[type=submit]:hover {
+  background-color: rgb(218, 218, 218);
+  color: rgb(65, 65, 65);
+  font-weight: 400;
+}
 .form-container input:focus {
   outline-style: none;
 }
@@ -81,6 +97,9 @@ body {
   border-radius: 2px;
   text-decoration: none;
 }
+.menu a:hover {
+  background-color: aliceblue;
+}
 .menu .menu-item {
   margin-left: 20px;
   color: black;
@@ -93,13 +112,17 @@ body {
   padding: 11px;
 }
 .menu .search input[type=submit] {
+  background-color: transparent;
   border-radius: 2px;
-  border: 0px;
+  border: 1px solid grey;
   font-family: "Montserrat", sans-serif;
   padding-left: 11px;
-  padding-top: 11px;
-  padding-bottom: 11px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   width: 60px;
+}
+.menu .search input[type=submit]:hover {
+  background-color: aliceblue;
 }
 
 th {

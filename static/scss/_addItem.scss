@@ -25,6 +25,24 @@
         border-bottom: 1px solid black;
         color: aliceblue; 
     }
+
+    input[type=submit] {
+        width: 80px;
+        color: aliceblue;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        border: 1px solid grey;
+        text-align: center;
+        padding:10px;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: rgb(218, 218, 218);
+        color: rgb(65, 65, 65);
+        font-weight: 400;
+    }
     
     input:focus {
         outline-style: none;

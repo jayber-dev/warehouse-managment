@@ -6,35 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="static/css/.index.css" />
-    <title>warehouse managment</title>
+    <title>warehouse Managment</title>
   </head>
   <body>
     <nav>
-      <div class="menu">
+      <div class="header">
+        <h1>Warehouse Managment</h1>     
+      </div>
+    </nav>
+    <nav class="menu">
         <a href="/" class="menu-item">Add item</a>
         <a href="/" class="menu-item">Home</a>
-      </div>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Warehouse</th>
-            <th>Item name</th>
-            <th>Quantity</th>
-            <th>Description</th>
-            <th>Catalog #</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>934</td>
-            <td>מסור</td>
-            <td>10</td>
-            <td>חד מאוד</td>
-            <td>50002454</td>
-          </tr>
-        </tbody>
-      </table>
     </nav>
+    <div class="search">
+        <form action="" method="get">
+            <input type="text">
+            <input type="submit" value="search">
+        </form>
+    </div>
+    <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Warehouse</th>
+              <th>Item name</th>
+              <th>Quantity</th>
+              <th>Description</th>
+              <th>Catalog #</th>
+              <th>Last modified</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in data %}
+            <tr>
+              <td>{{item[0]}}</td>
+              <td>{{item[1]}}</td>
+              <td>{{item[3]}}</td>
+              <td class="description-col">{{item[2]}}</td>
+              <td>{{item[4]}}</td>
+              <td>{{item[5][0:10:]}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
   </body>
 </html>

@@ -1,10 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
 body {
+  direction: rtl;
   margin: 0;
   box-sizing: border-box;
   background-color: #002D62;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  background-color: #fecda5;
+}
+.header h1 {
+  padding: 0px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
 }
 
 .menu {
+  text-align: center;
   padding: 20px;
   background-color: #fecda5;
 }
@@ -13,10 +31,55 @@ body {
   color: black;
 }
 
-table {
-  color: #fecda5;
-  border: 1px solid grey;
+.search {
+  margin-top: 25px;
+  text-align: center;
+}
+.search input[type=text] {
+  font-family: "Oswald", sans-serif;
+  width: 250px;
+  border-radius: 2px;
+  border: 0px;
+  padding: 11px;
+}
+.search input[type=submit] {
+  background-image: linear-gradient(red blue);
+  border-radius: 2px;
+  border: 0px;
+  font-family: "Oswald", sans-serif;
+  padding: 11px;
+  width: 60px;
+}
+
+th {
+  font-weight: 300;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+table, td:nth-child(even), tr, th {
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #ffffff;
+  border-collapse: collapse;
+  border: 1px solid #ffffff;
   border-style: groove;
+}
+
+.description-col {
+  text-align: justify;
+  max-height: 200px;
+  min-height: 20px;
+  max-width: 250px;
+  min-width: 20px;
 }
 
 /*# sourceMappingURL=.index.css.map */

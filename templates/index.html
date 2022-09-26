@@ -42,26 +42,33 @@
             <th>Description</th>
             <th>Catalog #</th>
             <th>Last modified</th>
+            <th>Delete</th>
+            <th>Update</th>
           </tr>
         </thead>
         <tbody>
           {% for item in data %}
           
           <tr>       
-            <td name="wow">{{item[0]}}</td>
             <td>{{item[1]}}</td>
             <td>{{item[3]}}</td>
-            <td class="description-col">{{item[2]}}</td>
             <td>{{item[4]}}</td>
-            <td>{{item[5][0:10:]}}</td>
+            <td class="description-col">{{item[2]}}</td>
+            <td>{{item[5]}}</td>
+            <td>{{item[6][0:10:]}}</td>
             <td>
-                <form action='/item_delete/{{item[1]}}' method="get">
-                <input type="submit" value="x">
+                <form action='/item_delete/{{item[0]}}' method="get">
+                <button type="submit"  class="delete-btn"><img src="../static/svg/delete-svgrepo-com (1).svg" alt="" class="delete-svg"><small class="info">delete</small></button>
                 </form>
+            </td>
+            <td>
+                <a href="{{url_for('item_update',row_id=item[0],warehouse=item[1],item=item[3],quantity=item[4],description=item[2],catalogId=item5)}}" class="update" ><img src="../static/svg/pencil-edit-button-svgrepo-com.svg" alt="" class="pencil"><small class="update">update</small></a>
             </td>   
           </tr>
         
           {% endfor %}
+
+          
         </tbody>
       </table>
     </div>

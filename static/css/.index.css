@@ -165,10 +165,38 @@ table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth
 
 .description-col {
   text-align: justify;
-  max-height: 200px;
+  max-height: 100px;
   min-height: 20px;
-  max-width: 250px;
+  max-width: 100px;
   min-width: 20px;
+}
+
+.delete-btn {
+  border: 0px;
+  background-color: transparent;
+}
+.delete-btn .delete-svg {
+  width: 20px;
+  height: auto;
+}
+
+.info {
+  font-family: "Montserrat", sans-serif;
+  font-size: x-small;
+}
+
+.pencil {
+  width: 20px;
+  height: 20px;
+  margin: 0px;
+}
+
+.update {
+  margin-top: -20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: x-small;
+  color: #272626;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=.index.css.map */

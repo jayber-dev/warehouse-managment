@@ -44,7 +44,7 @@ def add_item():
         cur = sq.Cursor(conn)
         dict_data = request.form.to_dict()
         update_date = datetime.datetime.now()
-        cur.execute(f"""INSERT INTO warehouse(warehouse_name,item,item_description,quantity,catalog_id,update_date) VALUES('{dict_data["warehouse"]}','{dict_data["item"]}','{dict_data["description"]}','{dict_data["quantity"]}','{dict_data["catalog_id"]}','{update_date}')""")
+        cur.execute(f"""INSERT INTO warehouse(warehouse_name,item,item_description,quantity,catalog_id,update_date) VALUES('{dict_data["warehouse"]}',\'{dict_data["item"]}\',\'{dict_data["description"]}\','{dict_data["quantity"]}','{dict_data["catalog_id"]}','{update_date}')""")
         conn.commit()
         cur.close()
         print(request.form.to_dict())

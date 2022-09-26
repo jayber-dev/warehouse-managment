@@ -99,6 +99,9 @@ th {
 }
 
 table ,td:nth-child(even) ,tr, th{
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
     font-weight: 400;
     text-align: center;
     padding-top: 5px;
@@ -109,6 +112,10 @@ table ,td:nth-child(even) ,tr, th{
     border-collapse: collapse;
     border: 1px solid #ffffff;
     border-style: groove;
+
+    .time {
+        direction: ltr;
+    }
 
     th {
         padding:10px;
@@ -128,17 +135,24 @@ table ,td:nth-child(even) ,tr, th{
 }
 
 .description-col {
-    text-align: justify;
-    max-height: 100px;
-    min-height: 20px;
-    max-width: 100px;
-    min-width: 20px;
+    // text-align: justify;
+    // max-height: 100px;
+    // min-height: 20px;
+    // max-width: 100px;
+    // min-width: 20px;
     
 }
 
 .delete-btn {
+    display: flex;
     border: 0px;
+    margin-right: auto;
+    margin-left: auto;
     background-color: transparent;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    align-content: center;
     
     .delete-svg {
         width: 20px;
@@ -152,6 +166,7 @@ table ,td:nth-child(even) ,tr, th{
 }
 
 .pencil {
+    display: flex;
     // padding-top: 5px;
     width: 20px;
     height: 20px;
@@ -159,10 +174,13 @@ table ,td:nth-child(even) ,tr, th{
 }
 
 .update {
-    margin-top: -20px;
-    font-family: 'Montserrat', sans-serif;
-    // font-weight: 300;
+    display: flex;
+    font-family: "Montserrat", sans-serif;
     font-size: x-small;
     color: #272626;
     text-decoration: none;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
 }

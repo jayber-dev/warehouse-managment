@@ -11,6 +11,7 @@
   text-align: start;
 }
 .form-container input {
+  text-align: center;
   width: 400px;
   margin-bottom: 40px;
   margin-top: 0px;
@@ -42,7 +43,7 @@
   outline-style: none;
 }
 .form-container ::placeholder {
-  text-align: left;
+  text-align: center;
   color: rgb(180, 179, 179);
 }
 
@@ -137,6 +138,9 @@ th {
 }
 
 table, td:nth-child(even), tr, th {
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
   font-weight: 400;
   text-align: center;
   padding-top: 5px;
@@ -147,6 +151,9 @@ table, td:nth-child(even), tr, th {
   border-collapse: collapse;
   border: 1px solid #ffffff;
   border-style: groove;
+}
+table .time, td:nth-child(even) .time, tr .time, th .time {
+  direction: ltr;
 }
 table th, td:nth-child(even) th, tr th, th th {
   padding: 10px;
@@ -163,17 +170,16 @@ table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth
   color: #272626;
 }
 
-.description-col {
-  text-align: justify;
-  max-height: 100px;
-  min-height: 20px;
-  max-width: 100px;
-  min-width: 20px;
-}
-
 .delete-btn {
+  display: flex;
   border: 0px;
+  margin-right: auto;
+  margin-left: auto;
   background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  align-content: center;
 }
 .delete-btn .delete-svg {
   width: 20px;
@@ -186,17 +192,22 @@ table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth
 }
 
 .pencil {
+  display: flex;
   width: 20px;
   height: 20px;
   margin: 0px;
 }
 
 .update {
-  margin-top: -20px;
+  display: flex;
   font-family: "Montserrat", sans-serif;
   font-size: x-small;
   color: #272626;
   text-decoration: none;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
 }
 
 /*# sourceMappingURL=.index.css.map */

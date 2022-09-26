@@ -38,8 +38,9 @@
           <tr>
             <th>Warehouse</th>
             <th>Item name</th>
-            <th>Quantity</th>
+            
             <th>Description</th>
+            <th>Quantity</th>
             <th>Catalog #</th>
             <th>Last modified</th>
             <th>Delete</th>
@@ -51,18 +52,19 @@
           
           <tr>       
             <td>{{item[1]}}</td>
-            <td>{{item[3]}}</td>
+            <td>{{item[2]}}</td>
+            <td class="description-col">{{item[3]}}</td>
             <td>{{item[4]}}</td>
-            <td class="description-col">{{item[2]}}</td>
+            
             <td>{{item[5]}}</td>
-            <td>{{item[6][0:10:]}}</td>
+            <td class="time">{{item[6][0:19:]}}</td>
             <td>
                 <form action='/item_delete/{{item[0]}}' method="get">
                 <button type="submit"  class="delete-btn"><img src="../static/svg/delete-svgrepo-com (1).svg" alt="" class="delete-svg"><small class="info">delete</small></button>
                 </form>
             </td>
             <td>
-                <a href="{{url_for('item_update',row_id=item[0],warehouse=item[1],item=item[3],quantity=item[4],description=item[2],catalogId=item5)}}" class="update" ><img src="../static/svg/pencil-edit-button-svgrepo-com.svg" alt="" class="pencil"><small class="update">update</small></a>
+                <a href="{{url_for('item_update',row_id=item[0],warehouse=item[1],item=item[2],quantity=item[4],description=item[3],catalogId=item5)}}" class="update" ><img src="../static/svg/pencil-edit-button-svgrepo-com.svg" alt="" class="pencil"><small class="update">update</small></a>
             </td>   
           </tr>
         

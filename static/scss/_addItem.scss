@@ -1,5 +1,6 @@
 .form-container {
     form {
+        
         margin-top: 20px;
         direction: ltr;
         display: flex;
@@ -14,6 +15,7 @@
     }
     
     input {
+        text-align: center;
         width: 400px;
         margin-bottom:40px;
         margin-top: 0px;
@@ -49,8 +51,10 @@
     }
     
     ::placeholder {
-        text-align: left;
+        text-align: center;
         color: rgb(180, 179, 179);
     }
+
+    
 }
 

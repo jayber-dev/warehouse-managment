@@ -58,18 +58,34 @@ def item_delete(row_delete):
     conn = sq.connect('data.db')
     cur = sq.Cursor(conn)
     cur.execute(stmt)
-    # print(row_data.fetchall())
     conn.commit()
+    cur.close()
     return redirect(url_for('index'))
 
 @app.route('/item_update/<string:row_id>', methods=['get','post'])
 def item_update(row_id):
-    if(request.method == 'GET'):    
-        print(request.args.to_dict())
-        return render_template('updateItem.html', row_id=row_id, data=request.args.to_dict())
-    else:
+    if(request.method == 'POST'):
+        data = request.form.to_dict()
+        conn = sq.connect('data.db')    
+        cur = sq.Cursor(conn)
+        update_date = datetime.datetime.now()
+        print(data)
+        cur.execute(f"""UPDATE warehouse SET
+                    warehouse_name = '{data['warehouse']}',
+                    item = '{data['item']}',
+                    quantity = '{data['quantity']}',
+                    item_description= '{data['description']}',
+                    catalog_id= '{data['catalog_id']}',
+                    update_date= '{update_date}'
+                    WHERE id={row_id}""")
+        conn.commit()
+        cur.close()
         print('im in post method')
         return redirect(url_for('index'))
+        
+    print(request.args.to_dict())
+    return render_template('updateItem.html', row_id=row_id, data=request.args.to_dict())
+        
     
 if (__name__ == '__main__'):
     app.run(debug=True)

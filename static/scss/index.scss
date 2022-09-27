@@ -45,6 +45,16 @@ body {
     justify-content: center;
     text-decoration: none;
 
+    .print {
+        border: 0px;
+        
+        .print-svg {
+            width: 22px;
+            // height: 18px;
+        }
+    
+    }
+    
     
 
     a{
@@ -118,6 +128,10 @@ table ,td:nth-child(even) ,tr, th{
     border-collapse: collapse;
     border: 1px solid #ffffff;
     border-style: groove;
+
+    .warehouse-col {
+        max-width: 150px;
+    }
 
     .time {
         direction: ltr;
@@ -206,6 +220,10 @@ table ,td:nth-child(even) ,tr, th{
     .top-container {
         display: none;
         
+    }
+
+    .warehouse-col {
+        max-width: 100px;
     }
 
     .table-container { 

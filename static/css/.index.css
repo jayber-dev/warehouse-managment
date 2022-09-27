@@ -92,6 +92,12 @@ body {
   justify-content: center;
   text-decoration: none;
 }
+.menu .print {
+  border: 0px;
+}
+.menu .print .print-svg {
+  width: 22px;
+}
 .menu a {
   border: 1px solid grey;
   padding: 8px;
@@ -154,6 +160,9 @@ table, td:nth-child(even), tr, th {
   border-collapse: collapse;
   border: 1px solid #ffffff;
   border-style: groove;
+}
+table .warehouse-col, td:nth-child(even) .warehouse-col, tr .warehouse-col, th .warehouse-col {
+  max-width: 150px;
 }
 table .time, td:nth-child(even) .time, tr .time, th .time {
   direction: ltr;
@@ -233,6 +242,9 @@ table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth
 @media print {
   .top-container {
     display: none;
+  }
+  .warehouse-col {
+    max-width: 100px;
   }
   .table-container {
     margin: 10px;

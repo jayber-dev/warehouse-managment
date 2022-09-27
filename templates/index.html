@@ -16,7 +16,7 @@
         </div>
       </header>
       <nav class="menu">
-        <a href="/" class="menu-item print">Print</a>
+        <a href="/" class="menu-item print"><img src="../static/svg/print-svgrepo-com.svg" alt="" class="print-svg"></a>
         <a href="/addItem" class="menu-item">Add Item</a>
         <a href="/" class="menu-item">Main Page</a>
         
@@ -38,7 +38,7 @@
       <table>
         <thead>
           <tr>
-            <th>Warehouse</th>
+            <th class="warehouse-col">Warehouse</th>
             <th>Item name</th>   
             <th>Description</th>
             <th>Quantity</th>
@@ -52,7 +52,7 @@
           {% for item in data %}
           
           <tr>       
-            <td>{{item[1]}}</td>
+            <td class="warehouse-col">{{item[1]}}</td>
             <td>{{item[2]}}</td>
             <td class="description-col">{{item[3]}}</td>
             <td>{{item[4]}}</td>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="../static/js/index.js" defer></script>
-    <link rel="stylesheet" href="static/css/.index.css" />
+    <link rel="stylesheet" href="../static/css/.index.css" />
     <title>warehouse Managment</title>
   </head>
   <body>
@@ -16,12 +16,14 @@
         </div>
       </header>
       <nav class="menu">
-        <a href="/addItem" class="menu-item">Add item</a>
-        <a href="/" class="menu-item">Home</a>
+        <a href="/" class="menu-item print">Print</a>
+        <a href="/addItem" class="menu-item">Add Item</a>
+        <a href="/" class="menu-item">Main Page</a>
+        
         <div class="search">
             <form action="{{url_for('search')}}" method="get">
               <input type="text" name="q" />
-              <input type="submit" value="Search" />
+              <input type="submit" value="Search" class="search-btn" />
             </form>
           </div>
       </nav>
@@ -37,14 +39,13 @@
         <thead>
           <tr>
             <th>Warehouse</th>
-            <th>Item name</th>
-            
+            <th>Item name</th>   
             <th>Description</th>
             <th>Quantity</th>
             <th>Catalog #</th>
             <th>Last modified</th>
-            <th>Delete</th>
-            <th>Update</th>
+            <th class="hidden-col">Delete</th>
+            <th class="hidden-col">Update</th>
           </tr>
         </thead>
         <tbody>
@@ -57,13 +58,13 @@
             <td>{{item[4]}}</td>
             
             <td>{{item[5]}}</td>
-            <td class="time">{{item[6][0:19:]}}</td>
-            <td>
+            <td class="time">{{item[6][2:10:]}}</td>
+            <td class="hidden-col">
                 <form action='/item_delete/{{item[0]}}' method="get">
                 <button type="submit"  class="delete-btn"><img src="../static/svg/delete-svgrepo-com (1).svg" alt="" class="delete-svg"><small class="info">delete</small></button>
                 </form>
             </td>
-            <td>
+            <td class="hidden-col">
                 <a href="{{url_for('item_update',row_id=item[0],warehouse=item[1],item=item[2],quantity=item[4],description=item[3],catalogId=item5)}}" class="update" ><img src="../static/svg/pencil-edit-button-svgrepo-com.svg" alt="" class="pencil"><small class="update">update</small></a>
             </td>   
           </tr>
@@ -74,5 +75,9 @@
         </tbody>
       </table>
     </div>
+
+    <footer>
+        <p class="copyrights"> &copy; Made by Evgeny Bershadsky </p>
+    </footer>
   </body>
 </html>

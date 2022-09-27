@@ -35,7 +35,9 @@ def add_item():
         cur = sq.Cursor(conn)
         dict_data = request.form.to_dict()
         update_date = datetime.datetime.now()
-        cur.execute(f"""INSERT INTO warehouse(warehouse_name,item,item_description,quantity,catalog_id,update_date) VALUES('{dict_data["warehouse"]}',\'{dict_data["item"]}\',\'{dict_data["description"]}\','{dict_data["quantity"]}','{dict_data["catalog_id"]}','{update_date}')""")
+        arr_data = [dict_data['warehouse'],dict_data['item'],dict_data['description'],dict_data['quantity'],dict_data["catalog_id"],update_date]
+        # cur.execute(f"""INSERT INTO warehouse(warehouse_name,item,item_description,quantity,catalog_id,update_date) VALUES('{dict_data["warehouse"]}',\'{dict_data["item"]}\',\'{dict_data["description"]}\','{dict_data["quantity"]}','{dict_data["catalog_id"]}','{update_date}')""")
+        cur.execute(f"""INSERT INTO warehouse(warehouse_name,item,item_description,quantity,catalog_id,update_date) VALUES(?,?,?,?,?,?)""",arr_data)
         conn.commit()
         cur.close()
         print(request.form.to_dict())
@@ -77,10 +79,16 @@ def item_update(row_id):
     print(request.args.to_dict())
     return render_template('updateItem.html', row_id=row_id, data=request.args.to_dict())
         
-@app.route('/search/<q>', methods=["GET","POST"])
-def search(q):
-    print(request.args)
-    pass
+@app.route('/search/', methods=["GET","POST"])
+def search():
+    search_query = request.args.to_dict()['q']
+    print(search_query)
+    conn = sq.connect('data.db')    
+    cur = sq.Cursor(conn)
+    cur.execute(f'SELECT * FROM warehouse WHERE warehouse_name="{search_query}" OR item="{search_query}" OR item_description="{search_query}"')
+    query_data = cur.fetchall()
+    print(query_data)
+    return render_template('index.html', data=query_data)
 
 
 if (__name__ == '__main__'):

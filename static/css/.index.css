@@ -117,10 +117,12 @@ body {
   border-radius: 2px;
   border: 1px solid grey;
   font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: medium;
   padding-left: 11px;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 60px;
+  width: 70px;
 }
 .menu .search input[type=submit]:hover {
   background-color: aliceblue;
@@ -135,6 +137,7 @@ th {
   justify-content: center;
   align-items: center;
   margin-top: 160px;
+  margin-bottom: 50px;
 }
 
 table, td:nth-child(even), tr, th {
@@ -154,6 +157,9 @@ table, td:nth-child(even), tr, th {
 }
 table .time, td:nth-child(even) .time, tr .time, th .time {
   direction: ltr;
+  padding: 0px;
+  margin: 0px;
+  width: 0px;
 }
 table th, td:nth-child(even) th, tr th, th th {
   padding: 10px;
@@ -168,6 +174,13 @@ table tr:nth-child(odd) td, td:nth-child(even) tr:nth-child(odd) td, tr tr:nth-c
 table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth-child(even) td, th tr:nth-child(even) td {
   background-color: rgb(218, 214, 214);
   color: #272626;
+}
+
+.description-col {
+  max-height: 200px;
+  min-height: 20px;
+  max-width: 250px;
+  min-width: 20px;
 }
 
 .delete-btn {
@@ -208,6 +221,65 @@ table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth
   flex-direction: column;
   align-content: center;
   justify-content: flex-start;
+}
+
+.copyrights {
+  direction: ltr;
+  text-align: center;
+  color: aliceblue;
+  padding-bottom: 20px;
+}
+
+@media print {
+  .top-container {
+    display: none;
+  }
+  .table-container {
+    margin: 10px;
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+  }
+  .pencil {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+  }
+  .update {
+    display: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: x-small;
+    color: #272626;
+    text-decoration: none;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+  }
+  .hidden-col {
+    display: none;
+  }
+  .delete-btn {
+    display: none;
+    border: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: transparent;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    align-content: center;
+  }
+  .delete-btn .delete-svg {
+    width: 20px;
+    height: auto;
+  }
+  .info {
+    font-family: "Montserrat", sans-serif;
+    font-size: x-small;
+  }
 }
 
 /*# sourceMappingURL=.index.css.map */

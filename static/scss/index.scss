@@ -4,6 +4,7 @@ html {
     margin:0;
 }
 body {
+    height: 100vh;
     direction: rtl;
     margin: 0;
     box-sizing: border-box;
@@ -207,12 +208,21 @@ table ,td:nth-child(even) ,tr, th{
     justify-content: flex-start;
 }
 
-.copyrights {
-    direction: ltr;
-    text-align: center;
-    color: aliceblue;
-    padding-bottom: 20px;
+footer {
+
+    display: flex;
+    justify-content: center;
+
+    .copyrights {
+        direction: ltr;
+        text-align: center;
+        color: aliceblue;
+        padding-bottom: 20px;
+    }
 }
+
+
+
 
 
 @media print {
@@ -223,7 +233,8 @@ table ,td:nth-child(even) ,tr, th{
     }
 
     .warehouse-col {
-        max-width: 100px;
+        max-width: 50px;
+        min-width: 50px;
     }
 
     .table-container { 
@@ -236,7 +247,7 @@ table ,td:nth-child(even) ,tr, th{
     }
     .pencil {
         display: none;
-        // padding-top: 5px;
+        
         width: 20px;
         height: 20px;
         margin: 0px;

@@ -52,6 +52,7 @@ html {
 }
 
 body {
+  height: 100vh;
   direction: rtl;
   margin: 0;
   box-sizing: border-box;
@@ -232,7 +233,11 @@ table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth
   justify-content: flex-start;
 }
 
-.copyrights {
+footer {
+  display: flex;
+  justify-content: center;
+}
+footer .copyrights {
   direction: ltr;
   text-align: center;
   color: aliceblue;
@@ -244,7 +249,8 @@ table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth
     display: none;
   }
   .warehouse-col {
-    max-width: 100px;
+    max-width: 50px;
+    min-width: 50px;
   }
   .table-container {
     margin: 10px;

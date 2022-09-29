@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request,redirect,url_for
 import sqlite3 as sq
 import datetime
+import webbrowser as wb
 
 conn = sq.connect('data.db')
 cur = sq.Cursor(conn)
@@ -92,4 +93,5 @@ def search():
 
 
 if (__name__ == '__main__'):
-    app.run(debug=True)
+    wb.open(url="http://127.0.0.1:5000")
+    app.run(debug=False)

@@ -2,6 +2,9 @@ from flask import Flask, render_template, request,redirect,url_for
 import sqlite3 as sq
 import datetime
 import webbrowser as wb
+import dbinsert
+
+
 
 conn = sq.connect('data.db')
 cur = sq.Cursor(conn)
@@ -63,15 +66,11 @@ def item_update(row_id):
         conn = sq.connect('data.db')    
         cur = sq.Cursor(conn)
         update_date = datetime.datetime.now()
-        print(data)
-        cur.execute(f"""UPDATE warehouse SET
-                    warehouse_name = '{data['warehouse']}',
-                    item = '{data['item']}',
-                    quantity = '{data['quantity']}',
-                    item_description= '{data['description']}',
-                    catalog_id= '{data['catalog_id']}',
-                    update_date= '{update_date}'
-                    WHERE id={row_id}""")
+        # print(data)
+        args_array = [data['warehouse'], data['item'], data['quantity'], data['description'], data['catalog_id'], update_date]
+        print(args_array)
+        sql_query = f"UPDATE warehouse SET warehouse_name = ?, item = ?, quantity = ?, item_description= ?, catalog_id= ?, update_date= ? WHERE id={row_id}"
+        cur.execute(sql_query,args_array)
         conn.commit()
         cur.close()
         print('im in post method')
@@ -94,4 +93,4 @@ def search():
 
 if (__name__ == '__main__'):
     wb.open(url="http://127.0.0.1:5000")
-    app.run(debug=False)
+    app.run(debug=True)

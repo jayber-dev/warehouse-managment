@@ -1,0 +1,60 @@
+.form-container {
+    form {
+        
+        margin-top: 20px;
+        direction: ltr;
+        display: flex;
+        flex-flow: column;
+        align-items: center
+    }
+    
+    label {
+        color: aliceblue;
+        text-align: start;
+        
+    }
+    
+    input {
+        text-align: center;
+        width: 400px;
+        margin-bottom:40px;
+        margin-top: 0px;
+        background-color: transparent;
+        padding-top: 10px;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 1px solid black;
+        color: aliceblue; 
+    }
+
+    input[type=submit] {
+        width: 80px;
+        color: aliceblue;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        border: 1px solid grey;
+        text-align: center;
+        padding:10px;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: rgb(218, 218, 218);
+        color: rgb(65, 65, 65);
+        font-weight: 400;
+    }
+    
+    input:focus {
+        outline-style: none;
+    }
+    
+    ::placeholder {
+        text-align: center;
+        color: rgb(180, 179, 179);
+    }
+
+    
+}
+

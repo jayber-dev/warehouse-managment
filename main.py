@@ -83,12 +83,19 @@ def item_update(row_id):
 def search():
     search_query = request.args.to_dict()['q']
     print(search_query)
+    
     conn = sq.connect('data.db')    
     cur = sq.Cursor(conn)
-    cur.execute(f'SELECT * FROM warehouse WHERE warehouse_name="{search_query}" OR item="{search_query}" OR item_description="{search_query}"')
-    query_data = cur.fetchall()
-    print(query_data)
-    return render_template('index.html', data=query_data)
+    if(search_query == 'All warehouses'):
+        res = cur.execute('''SELECT * FROM warehouse''')
+        query_data = cur.fetchall()
+        return render_template('index.html', data=query_data)
+    else:
+        cur.execute("SELECT * FROM warehouse WHERE warehouse_name LIKE ?",['%' +search_query+ '%'])
+                    # OR item LIKE "_{search_query}" OR item_description LIKE "{search_query}"')
+        query_data = cur.fetchall()
+        print(query_data)
+        return render_template('index.html', data=query_data)
 
 
 if (__name__ == '__main__'):

@@ -56,6 +56,38 @@ body {
     
     }
     
+    .warehouse-select-form {
+        margin-left: 20px;
+        .warehouse-select {
+            background-color: #fecda5;
+            padding: 7px;
+            border-radius: 2px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: medium;
+            font-weight: 300;
+            max-width: 170px;
+        }
+
+        .warehouse-select:hover {
+            background-color: aliceblue;
+        }
+    
+        .warehouse-select-btn {
+            padding: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: medium;
+            font-weight: 300;
+            max-width: 170px;
+            margin-left: 5px;
+            background-color: transparent;
+            border-radius: 2px;
+            border: 1px solid grey;    
+        }
+
+        .warehouse-select-btn:hover {
+            background-color: aliceblue;
+        }
+    }
     
 
     a{

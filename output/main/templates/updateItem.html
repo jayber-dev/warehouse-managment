@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/.index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+          <h1>Update Item</h1>
+        </div>
+      </header>
+      <div class="form-container">
+        <form action="/item_update/{{row_id}}" method="post">
+          <label for="">Warehouse name</label>
+          <input type="text" value="{{data['warehouse']}}" name="warehouse"/>
+          <label for="">Item</label>
+          <input type="text" value="{{data['item']}}" name="item" />
+          <label for="">Description</label>
+          <input type="text" value="{{data['description']}}" name="description"/>
+          <label for="">Quantity</label>
+          <input type="text" value="{{data['quantity']}}" name="quantity" />
+          <label for="">Catalog ID</label>
+          <input type="text" value="{{data['catalogId']}}" name="catalog_id"/>  
+          <input type="submit" />
+        </form>
+      </div>
+      <footer>
+        <p class="copyrights"> &copy; Made by Evgeny Bershadsky </p>
+    </footer>
+</body>
+</html>

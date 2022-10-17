@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
+.form-container form {
+  margin-top: 20px;
+  direction: ltr;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.form-container label {
+  color: aliceblue;
+  text-align: start;
+}
+.form-container input {
+  text-align: center;
+  width: 400px;
+  margin-bottom: 40px;
+  margin-top: 0px;
+  background-color: transparent;
+  padding-top: 10px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid black;
+  color: aliceblue;
+}
+.form-container input[type=submit] {
+  width: 80px;
+  color: aliceblue;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  border: 1px solid grey;
+  text-align: center;
+  padding: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.form-container input[type=submit]:hover {
+  background-color: rgb(218, 218, 218);
+  color: rgb(65, 65, 65);
+  font-weight: 400;
+}
+.form-container input:focus {
+  outline-style: none;
+}
+.form-container ::placeholder {
+  text-align: center;
+  color: rgb(180, 179, 179);
+}
+
+html {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  direction: rtl;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #002D62;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+.top-container {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  background-color: #fecda5;
+}
+.header h1 {
+  padding: 0px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  margin: 0px;
+  padding: 10px;
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  padding: 5px;
+  background-color: #fecda5;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.menu .print {
+  border: 0px;
+}
+.menu .print .print-svg {
+  width: 22px;
+}
+.menu a {
+  border: 1px solid grey;
+  padding: 8px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.menu a:hover {
+  background-color: aliceblue;
+}
+.menu .menu-item {
+  margin-left: 20px;
+  color: black;
+}
+.menu .search input[type=text] {
+  font-family: "Montserrat", sans-serif;
+  width: 250px;
+  border-radius: 2px;
+  border: 0px;
+  padding: 11px;
+}
+.menu .search input[type=submit] {
+  background-color: transparent;
+  border-radius: 2px;
+  border: 1px solid grey;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: medium;
+  padding-left: 11px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 70px;
+}
+.menu .search input[type=submit]:hover {
+  background-color: aliceblue;
+}
+
+th {
+  font-weight: 300;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 160px;
+  margin-bottom: 50px;
+}
+
+table, td:nth-child(even), tr, th {
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-weight: 400;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #ffffff;
+  border-collapse: collapse;
+  border: 1px solid #ffffff;
+  border-style: groove;
+}
+table .warehouse-col, td:nth-child(even) .warehouse-col, tr .warehouse-col, th .warehouse-col {
+  max-width: 150px;
+}
+table .time, td:nth-child(even) .time, tr .time, th .time {
+  direction: ltr;
+  padding: 0px;
+  margin: 0px;
+  width: 0px;
+}
+table th, td:nth-child(even) th, tr th, th th {
+  padding: 10px;
+  background-color: grey;
+  color: #272626;
+  font-weight: 600;
+}
+table tr:nth-child(odd) td, td:nth-child(even) tr:nth-child(odd) td, tr tr:nth-child(odd) td, th tr:nth-child(odd) td {
+  background-color: #ffffff;
+  color: #272626;
+}
+table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth-child(even) td, th tr:nth-child(even) td {
+  background-color: rgb(218, 214, 214);
+  color: #272626;
+}
+
+.description-col {
+  max-height: 200px;
+  min-height: 20px;
+  max-width: 250px;
+  min-width: 20px;
+}
+
+.delete-btn {
+  display: flex;
+  border: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  align-content: center;
+}
+.delete-btn .delete-svg {
+  width: 20px;
+  height: auto;
+}
+
+.info {
+  font-family: "Montserrat", sans-serif;
+  font-size: x-small;
+}
+
+.pencil {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  margin: 0px;
+}
+
+.update {
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  font-size: x-small;
+  color: #272626;
+  text-decoration: none;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+footer .copyrights {
+  direction: ltr;
+  text-align: center;
+  color: aliceblue;
+  padding-bottom: 20px;
+}
+
+@media print {
+  .top-container {
+    display: none;
+  }
+  .warehouse-col {
+    max-width: 50px;
+    min-width: 50px;
+  }
+  .table-container {
+    margin: 10px;
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+  }
+  .pencil {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+  }
+  .update {
+    display: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: x-small;
+    color: #272626;
+    text-decoration: none;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+  }
+  .hidden-col {
+    display: none;
+  }
+  .delete-btn {
+    display: none;
+    border: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: transparent;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    align-content: center;
+  }
+  .delete-btn .delete-svg {
+    width: 20px;
+    height: auto;
+  }
+  .info {
+    font-family: "Montserrat", sans-serif;
+    font-size: x-small;
+  }
+}
+
+/*# sourceMappingURL=.index.css.map */

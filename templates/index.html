@@ -19,7 +19,16 @@
       <nav class="menu">
         <a href="/" class="menu-item print"><img src="../static/svg/print-svgrepo-com.svg" alt="" class="print-svg"></a>
         <a href="/addItem" class="menu-item">Add Item</a>
-        <a href="/" class="menu-item">Main Page</a>
+        <!-- <a href="/" class="menu-item">Main Page</a> -->
+        <form action="{{url_for('search')}}" class="warehouse-select-form">
+          <select  name="q" id="" class="warehouse-select">
+            <option value="All warehouses">All warehouses</option>
+            {% for item in data %}
+              <option value="{{item[1]}}">{{item[1]}}</option>
+            {% endfor %}
+          </select>
+          <button type="submit" class="warehouse-select-btn">Go</button>
+        </form>
         
         <div class="search">
             <form action="{{url_for('search')}}" method="get">

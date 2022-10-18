@@ -92,8 +92,7 @@ def search():
         return render_template('index.html', data=query_data)
     else:
         cur.execute("PRAGMA case_sensitive_like = true;")
-        cur.execute("SELECT * FROM warehouse WHERE warehouse_name LIKE ?",(f"%{search_query}%",))
-                    # OR item LIKE "_{search_query}" OR item_description LIKE "{search_query}"')
+        cur.execute(f"""SELECT * FROM warehouse WHERE warehouse_name LIKE '%{search_query}%' OR item LIKE '%{search_query}%' OR item_description LIKE '%{search_query}%' """)
         query_data = cur.fetchall()
         print(query_data)
         return render_template('index.html', data=query_data)

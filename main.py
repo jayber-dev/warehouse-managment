@@ -95,7 +95,7 @@ def search():
         cur.execute(f"""SELECT * FROM warehouse WHERE warehouse_name LIKE '%{search_query}%' OR item LIKE '%{search_query}%' OR item_description LIKE '%{search_query}%' """)
         query_data = cur.fetchall()
         print(query_data)
-        return render_template('index.html', data=query_data)
+        return render_template('index.html', data=query_data, q_param=search_query)
 
 
 if (__name__ == '__main__'):

@@ -147,6 +147,7 @@ body {
   border-radius: 2px;
   border: 0px;
   padding: 11px;
+  border: 1px solid grey;
 }
 .menu .search input[type=submit] {
   background-color: transparent;
@@ -156,7 +157,7 @@ body {
   font-weight: 300;
   font-size: medium;
   padding-left: 11px;
-  padding-top: 10px;
+  padding-top: 9px;
   padding-bottom: 10px;
   width: 70px;
 }
@@ -174,6 +175,10 @@ th {
   align-items: center;
   margin-top: 160px;
   margin-bottom: 50px;
+}
+
+mark {
+  background-color: rgb(187, 250, 187);
 }
 
 table, td:nth-child(even), tr, th {

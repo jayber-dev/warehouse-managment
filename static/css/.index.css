@@ -56,7 +56,7 @@ body {
   direction: rtl;
   margin: 0;
   box-sizing: border-box;
-  background-color: #002D62;
+  background-color: #082970;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
 }
@@ -185,7 +185,7 @@ table, td:nth-child(even), tr, th {
   margin-top: 10px;
   margin-right: 20px;
   margin-left: 20px;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -208,16 +208,18 @@ table .time, td:nth-child(even) .time, tr .time, th .time {
 table th, td:nth-child(even) th, tr th, th th {
   padding: 10px;
   background-color: grey;
-  color: #272626;
+  color: #000000;
   font-weight: 600;
 }
 table tr:nth-child(odd) td, td:nth-child(even) tr:nth-child(odd) td, tr tr:nth-child(odd) td, th tr:nth-child(odd) td {
   background-color: #ffffff;
-  color: #272626;
+  color: #000000;
+  font-weight: 600;
 }
 table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth-child(even) td, th tr:nth-child(even) td {
   background-color: rgb(218, 214, 214);
-  color: #272626;
+  color: #000000;
+  font-weight: 600;
 }
 
 .description-col {

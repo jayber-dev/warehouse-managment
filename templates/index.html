@@ -23,8 +23,8 @@
         <form action="{{url_for('search')}}" class="warehouse-select-form">
           <select  name="q" id="" class="warehouse-select">
             <option value="All warehouses">All warehouses</option>
-            {% for item in data %}
-              <option value="{{item[1]}}">{{item[1]}}</option>
+            {% for item in set_data %}
+              <option value="{{item[1]}}">{{item}}</option>
             {% endfor %}
           </select>
           <button type="submit" class="warehouse-select-btn">Go</button>

@@ -24,7 +24,7 @@
           <select  name="q" id="" class="warehouse-select">
             <option value="All warehouses">All warehouses</option>
             {% for item in set_data %}
-              <option value="{{item[1]}}">{{item}}</option>
+              <option value="{{item}}">{{item}}</option>
             {% endfor %}
           </select>
           <button type="submit" class="warehouse-select-btn">Go</button>

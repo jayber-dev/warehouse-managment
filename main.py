@@ -91,21 +91,19 @@ def item_update(row_id):
 @app.route('/search/', methods=["GET","POST"])
 def search():
     search_query = request.args.to_dict()['q']
-    # print(search_query)
-    
+    # print(search_query)   
     conn = sq.connect('data.db')    
     cur = sq.Cursor(conn)
     if(search_query == 'All warehouses'):
-        res = cur.execute('''SELECT * FROM warehouse''')
+        cur.execute('''SELECT * FROM warehouse''')
         query_data = cur.fetchall()
-        print(res)
         warehouse_names = set()
-        try:
-            for i in range(len(res)):
-                warehouse_names.add(res[i][1])
-                query_data = cur.fetchall()
-        except:
-            pass
+        # try:
+        for i in range(len(query_data)):
+            warehouse_names.add(query_data[i][1])
+        print(warehouse_names)
+        # except:
+        #     pass
         return render_template('index.html', data=query_data, set_data=warehouse_names)
     else:
         cur.execute("PRAGMA case_sensitive_like = true;")
@@ -113,9 +111,8 @@ def search():
         query_data = cur.fetchall()
         warehouse_names = set()
         for i in range(len(query_data) -1):
-                warehouse_names.add(query_data[i][1])
-                query_data = cur.fetchall()
-        print(query_data)
+            warehouse_names.add(query_data[i][1])
+        print(warehouse_names)
         return render_template('index.html', data=query_data, q_param=search_query, set_data=warehouse_names)
 
 

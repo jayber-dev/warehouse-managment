@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/static/css/.index.css" />
+    <script src="../static/js/additem.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -15,7 +16,12 @@
     </header>
     <div class="form-container">
       <form action="/addItem" method="post">
-        <label for="">Warehouse name</label>
+        <label for="">Warehouse name <select  name="q" id="" class="warehouse-select">
+          <option value="All warehouses">All warehouses</option>
+          {% for item in data %}
+            <option value="{{item[0]}}">{{item}}</option>
+          {% endfor %}
+        </select></label>
         <input type="text" placeholder="Warehouse name..." name="warehouse"/>
         <label for="">Item</label>
         <input type="text" placeholder="Item..." name="item" />

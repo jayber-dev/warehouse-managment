@@ -49,13 +49,19 @@ def add_item():
         cur.close()
         print(request.form.to_dict())
         return redirect(url_for('index'))
+
     conn = sq.connect('data.db')
     cur = sq.Cursor(conn)
-    res = cur.execute('SELECT warehouse_name FROM warehouse')
+    # res = cur.execute('SELECT warehouse_name FROM warehouse')
+    res = cur.execute('SELECT * FROM warehouse')
     all_warehouses = res.fetchall()
-    warehouse_set = set(all_warehouses)
-    print(warehouse_set)
-    return render_template('addItem.html', data=warehouse_set)
+    print(all_warehouses)
+    warehouse_names = set()
+    for i in range(len(all_warehouses)):
+        warehouse_names.add(all_warehouses[i][1])
+
+    print(warehouse_names)
+    return render_template('addItem.html', data=warehouse_names)
 
 @app.route('/item_delete/<string:row_delete>',methods=['GET'])
 def item_delete(row_delete):

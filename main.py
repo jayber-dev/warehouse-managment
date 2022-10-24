@@ -103,8 +103,7 @@ def item_update(row_id):
         
 @app.route('/search/', methods=["GET","POST"])
 def search():
-    search_query = request.args.to_dict()['q']
-    # print(search_query)   
+    search_query = request.args.to_dict()['q']  
     conn = sq.connect('data.db')    
     cur = sq.Cursor(conn)
     if(search_query == 'All warehouses'):

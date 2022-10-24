@@ -40,3 +40,29 @@ itemName.forEach((elem) => {
     }
 })
 
+// --------------------------- checked items handler ---------------------
+
+const checkBox = document.querySelectorAll('input[type=checkbox]')
+
+checkBox.forEach(element => {
+    element.addEventListener('change', (e) => {
+        element.childNodes
+        console.log(e.target.id);
+        const rowElement = e.target.parentElement.parentElement
+        console.log(rowElement.childNodes);
+        if(e.target.checked) {
+            localStorage.setItem(`${e.target.id}`, {
+                                                    warehouseName : rowElement.childNodes[3].innerText,
+                                                    itemName: rowElement.childNodes[5].innerText,
+                                                    catalogId : rowElement.childNodes[11].innerText,
+                                                    } )
+            // localStorage.setItem(`${e.target.id} itemName`,rowElement.childNodes[5].innerText)
+            // localStorage.setItem(`${e.target.id} catalogId`,rowElement.childNodes[11].innerText)
+            console.log(localStorage);
+        }
+        
+
+    })
+});
+
+

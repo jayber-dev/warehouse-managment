@@ -90,9 +90,16 @@ def item_update(row_id):
         cur.close()
         print('im in post method')
         return redirect(url_for('index'))
-        
+    conn = sq.connect('data.db')    
+    cur = sq.Cursor(conn)
+    cur.execute('''SELECT * FROM warehouse''')
+    query_data = cur.fetchall()
+    warehouse_names = set()
+    for i in range(len(query_data)):
+        warehouse_names.add(query_data[i][1])
+    
     print(request.args.to_dict())
-    return render_template('updateItem.html', row_id=row_id, data=request.args.to_dict())
+    return render_template('updateItem.html', row_id=row_id, data=request.args.to_dict(),set_data=warehouse_names)
         
 @app.route('/search/', methods=["GET","POST"])
 def search():

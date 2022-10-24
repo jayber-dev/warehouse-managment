@@ -98,19 +98,16 @@ def search():
         cur.execute('''SELECT * FROM warehouse''')
         query_data = cur.fetchall()
         warehouse_names = set()
-        # try:
         for i in range(len(query_data)):
-            warehouse_names.add(query_data[i][1])
-        print(warehouse_names)
-        # except:
-        #     pass
+            warehouse_names.add(query_data[i][1])      
         return render_template('index.html', data=query_data, set_data=warehouse_names)
     else:
         cur.execute("PRAGMA case_sensitive_like = true;")
         cur.execute(f"""SELECT * FROM warehouse WHERE warehouse_name LIKE '%{search_query}%' OR item LIKE '%{search_query}%' OR item_description LIKE '%{search_query}%' """)
         query_data = cur.fetchall()
+        print(query_data)
         warehouse_names = set()
-        for i in range(len(query_data) -1):
+        for i in range(len(query_data)):
             warehouse_names.add(query_data[i][1])
         print(warehouse_names)
         return render_template('index.html', data=query_data, q_param=search_query, set_data=warehouse_names)

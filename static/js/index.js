@@ -45,24 +45,48 @@ itemName.forEach((elem) => {
 const checkBox = document.querySelectorAll('input[type=checkbox]')
 
 checkBox.forEach(element => {
+    let localStorageData = JSON.parse(localStorage.getItem(element.id))
+    if(localStorageData) {
+        element.checked = true
+    }
+})
+
+checkBox.forEach(element => {
     element.addEventListener('change', (e) => {
-        element.childNodes
-        console.log(e.target.id);
+        // element.childNodes
+        // console.log(e.target.id);
         const rowElement = e.target.parentElement.parentElement
         console.log(rowElement.childNodes);
+        
+        
+
         if(e.target.checked) {
-            localStorage.setItem(`${e.target.id}`, {
-                                                    warehouseName : rowElement.childNodes[3].innerText,
-                                                    itemName: rowElement.childNodes[5].innerText,
-                                                    catalogId : rowElement.childNodes[11].innerText,
-                                                    } )
+            const rowData = JSON.stringify({
+                id: e.target.id,
+                warehouseName : rowElement.childNodes[3].innerText,
+                itemName: rowElement.childNodes[5].innerText,
+                catalogId : rowElement.childNodes[11].innerText,
+                })
+            localStorage.setItem(`${e.target.id}`,rowData)
             // localStorage.setItem(`${e.target.id} itemName`,rowElement.childNodes[5].innerText)
             // localStorage.setItem(`${e.target.id} catalogId`,rowElement.childNodes[11].innerText)
             console.log(localStorage);
-        }
-        
-
+        } else if(!e.target.checked) {
+            localStorage.removeItem(`${e.target.id}`)
+        }       
     })
 });
+
+// ------------------- modal handler --------------------------
+const modal = document.querySelector('.modal')
+const list = document.querySelector('.checked-list')
+
+list.addEventListener('click', () => {
+    modal.style.display = "flex"
+})
+
+// ------------------- modal table creator --------------------
+
+console.log(document.querySelectorAll('.modal'))
 
 

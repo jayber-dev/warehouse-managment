@@ -16,7 +16,20 @@
           <h1>Warehouse Managment</h1>
         </div>
       </header>
+      
       <nav class="menu">
+        <div>
+          <button class="menu-item checked-list">checked list</button>
+          <div class="modal">
+            <div >
+              <p class="modal-header">Item name</p>
+              <p class="modal-header">Quantity</p>
+              <p class="modal-header">Catalog #</p> 
+            </div>
+               
+          </div>
+        </div>
+        
         <a href="/" class="menu-item print"><img src="../static/svg/print-svgrepo-com.svg" alt="" class="print-svg"></a>
         <a href="/addItem" class="menu-item">Add Item</a>
         <!-- <a href="/" class="menu-item">Main Page</a> -->
@@ -28,6 +41,7 @@
             {% endfor %}
           </select>
           <button type="submit" class="warehouse-select-btn">Go</button>
+          
         </form>
         
         <div class="search">
@@ -38,8 +52,9 @@
           </div>
       </nav>
     </div>
+    
     <div class="table-container">
-      <table>
+      <table class="table">
         <thead>
           <tr>
             <th>check</th>

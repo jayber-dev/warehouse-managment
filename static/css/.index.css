@@ -52,6 +52,7 @@ html {
 }
 
 body {
+  position: relative;
   height: 100vh;
   direction: rtl;
   margin: 0;
@@ -67,6 +68,20 @@ body {
   width: 100%;
   margin: 0px;
   padding: 0px;
+}
+
+.modal {
+  direction: ltr;
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+  display: none;
+  flex-direction: row;
+}
+.modal .modal-header {
+  background-color: #ffffff;
+  border: 1px solid grey;
+  padding: 10px;
 }
 
 .header {
@@ -98,6 +113,19 @@ body {
 }
 .menu .print .print-svg {
   width: 22px;
+}
+.menu .checked-list {
+  background-color: #fecda5;
+  padding: 7px;
+  border-radius: 2px;
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+  font-weight: 300;
+  max-width: 170px;
+  border: 1px solid grey;
+}
+.menu .checked-list:hover {
+  background-color: aliceblue;
 }
 .menu .warehouse-select-form {
   margin-left: 17px;
@@ -181,7 +209,7 @@ mark {
   background-color: rgb(187, 250, 187);
 }
 
-table, td:nth-child(even), tr, th {
+.table, td:nth-child(even), tr, th {
   margin-top: 10px;
   margin-right: 20px;
   margin-left: 20px;
@@ -196,27 +224,27 @@ table, td:nth-child(even), tr, th {
   border: 1px solid #ffffff;
   border-style: groove;
 }
-table .warehouse-col, td:nth-child(even) .warehouse-col, tr .warehouse-col, th .warehouse-col {
+.table .warehouse-col, td:nth-child(even) .warehouse-col, tr .warehouse-col, th .warehouse-col {
   max-width: 150px;
 }
-table .time, td:nth-child(even) .time, tr .time, th .time {
+.table .time, td:nth-child(even) .time, tr .time, th .time {
   direction: ltr;
   padding: 0px;
   margin: 0px;
   width: 0px;
 }
-table th, td:nth-child(even) th, tr th, th th {
+.table th, td:nth-child(even) th, tr th, th th {
   padding: 10px;
   background-color: grey;
   color: #000000;
   font-weight: 600;
 }
-table tr:nth-child(odd) td, td:nth-child(even) tr:nth-child(odd) td, tr tr:nth-child(odd) td, th tr:nth-child(odd) td {
+.table tr:nth-child(odd) td, td:nth-child(even) tr:nth-child(odd) td, tr tr:nth-child(odd) td, th tr:nth-child(odd) td {
   background-color: #ffffff;
   color: #000000;
   font-weight: 600;
 }
-table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth-child(even) td, th tr:nth-child(even) td {
+.table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth-child(even) td, th tr:nth-child(even) td {
   background-color: rgb(218, 214, 214);
   color: #000000;
   font-weight: 600;

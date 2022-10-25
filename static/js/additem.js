@@ -7,3 +7,4 @@ selectElement.addEventListener('change', (e) => {
     output.value = e.target.value
 })
 
+

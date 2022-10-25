@@ -4,6 +4,7 @@ html {
     margin:0;
 }
 body {
+    position: relative;
     height: 100vh;
     direction: rtl;
     margin: 0;
@@ -19,6 +20,20 @@ body {
     width: 100%;
     margin:0px;
     padding: 0px;
+}
+
+.modal {
+    direction: ltr;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    display: none;
+    flex-direction: row;
+        .modal-header {
+            background-color: #ffffff;
+            border: 1px solid grey;
+            padding: 10px;      
+        }
 }
 
 .header {
@@ -47,13 +62,26 @@ body {
     text-decoration: none;
 
     .print {
-        border: 0px;
-        
+        border: 0px;   
         .print-svg {
             width: 22px;
             // height: 18px;
         }
-    
+    }
+
+    .checked-list {
+        background-color: #fecda5;
+            padding: 7px;
+            border-radius: 2px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: medium;
+            font-weight: 300;
+            max-width: 170px;
+            border: 1px solid grey;    
+    }
+
+    .checked-list:hover {
+        background-color: aliceblue ;
     }
     
     .warehouse-select-form {
@@ -100,8 +128,7 @@ body {
         background-color: aliceblue;
     }
     .menu-item {
-        margin-left: 20px;
-        
+        margin-left: 20px; 
         color: black;
     }
 
@@ -135,6 +162,8 @@ body {
     }
 }
 
+
+
 th {
     
     font-weight: 300;
@@ -153,7 +182,7 @@ mark {
     background-color: rgb(187, 250, 187);
 }
 
-table ,td:nth-child(even) ,tr, th{
+.table ,td:nth-child(even) ,tr, th{
     margin-top: 10px;
     margin-right: 20px;
     margin-left: 20px;

@@ -53,13 +53,8 @@ checkBox.forEach(element => {
 
 checkBox.forEach(element => {
     element.addEventListener('change', (e) => {
-        // element.childNodes
-        // console.log(e.target.id);
         const rowElement = e.target.parentElement.parentElement
-        console.log(rowElement.childNodes);
-        
-        
-
+          
         if(e.target.checked) {
             const rowData = JSON.stringify({
                 id: e.target.id,
@@ -70,7 +65,7 @@ checkBox.forEach(element => {
             localStorage.setItem(`${e.target.id}`,rowData)
             // localStorage.setItem(`${e.target.id} itemName`,rowElement.childNodes[5].innerText)
             // localStorage.setItem(`${e.target.id} catalogId`,rowElement.childNodes[11].innerText)
-            console.log(localStorage);
+            // console.log(localStorage);
         } else if(!e.target.checked) {
             localStorage.removeItem(`${e.target.id}`)
         }       
@@ -87,6 +82,26 @@ list.addEventListener('click', () => {
 
 // ------------------- modal table creator --------------------
 
-console.log(document.querySelectorAll('.modal'))
+// console.log(document.querySelectorAll('.modal'))
+const modalTable = document.querySelector('.modal-items')
+
+const data = new Array()
+
+for(i in localStorage){
+    if(localStorage.getItem(i)){
+        data.push(JSON.parse(localStorage.getItem(i)))
+    } 
+}
+
+for(let i=0;i<data.length;i++){
+    for(item in data[i]){
+        const pElem = document.createElement('p')
+        pElem.textContent = item
+        console.log(i.warehouseName);
+        modalTable.appendChild(pElem)
+    }
+    
+    
+}
 
 

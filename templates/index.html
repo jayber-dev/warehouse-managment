@@ -21,12 +21,45 @@
         <div>
           <button class="menu-item checked-list">checked list</button>
           <div class="modal">
-            <div class="modal-head">
-              <p class="modal-header">Item name</p>
-              <p class="modal-header">Quantity</p>
-              <p class="modal-header">Catalog #</p> 
-            </div>
-               
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>check</th>
+                  <th>Item name</th>   
+                  <th>Quantity</th>
+                  <th>Catalog #</th>
+                  
+                  <th class="hidden-col">Delete</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in data %}
+                
+                <tr>
+                  <td>
+                    <input type="checkbox" name="" id="{{item[0]}}">
+                  </td>       
+                               
+                  <td class="item-name">{{item[2]}}</td>
+                  
+                  <td>{{item[4]}}</td>
+                  
+                  <td>{{item[5]}}</td>
+                  <td class="time">{{item[6][2:10:]}}</td>
+                  <td class="hidden-col">
+                      <form action='/item_delete/{{item[0]}}' method="get">
+                      <button type="submit"  class="delete-btn"><img src="../static/svg/delete-svgrepo-com (1).svg" alt="" class="delete-svg"><small class="info">delete</small></button>
+                      </form>
+                  </td>
+                   
+                </tr>
+              
+                {% endfor %}
+      
+                
+              </tbody>
+            </table>
           </div>
         </div>
         

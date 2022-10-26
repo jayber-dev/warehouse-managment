@@ -73,18 +73,29 @@ body {
 .modal {
   direction: ltr;
   padding: 0px;
-  margin: 0px;
   position: absolute;
   display: none;
-  flex-direction: row;
+  flex-direction: column;
 }
-.modal .modal-head {
+.modal .modal-headers {
   display: flex;
+  margin: 0px;
 }
-.modal .modal-head p {
+.modal .modal-headers p {
   background-color: #ffffff;
   border: 1px solid grey;
   padding: 10px;
+  margin: 0px;
+}
+.modal .modal-items {
+  display: flex;
+  margin: 0px;
+}
+.modal .modal-items p {
+  background-color: #ffffff;
+  border: 1px solid grey;
+  padding: 10px;
+  margin: 0px;
 }
 
 .header {
@@ -207,12 +218,10 @@ th {
   margin-top: 160px;
   margin-bottom: 50px;
 }
-
-mark {
-  background-color: rgb(187, 250, 187);
-}
-
-.table, td:nth-child(even), tr, th {
+.table-container .table,
+.table-container td:nth-child(even),
+.table-container tr,
+.table-container th {
   margin-top: 10px;
   margin-right: 20px;
   margin-left: 20px;
@@ -227,30 +236,49 @@ mark {
   border: 1px solid #ffffff;
   border-style: groove;
 }
-.table .warehouse-col, td:nth-child(even) .warehouse-col, tr .warehouse-col, th .warehouse-col {
+.table-container .table .warehouse-col,
+.table-container td:nth-child(even) .warehouse-col,
+.table-container tr .warehouse-col,
+.table-container th .warehouse-col {
   max-width: 150px;
 }
-.table .time, td:nth-child(even) .time, tr .time, th .time {
+.table-container .table .time,
+.table-container td:nth-child(even) .time,
+.table-container tr .time,
+.table-container th .time {
   direction: ltr;
   padding: 0px;
   margin: 0px;
   width: 0px;
 }
-.table th, td:nth-child(even) th, tr th, th th {
+.table-container .table th,
+.table-container td:nth-child(even) th,
+.table-container tr th,
+.table-container th th {
   padding: 10px;
   background-color: grey;
   color: #000000;
   font-weight: 600;
 }
-.table tr:nth-child(odd) td, td:nth-child(even) tr:nth-child(odd) td, tr tr:nth-child(odd) td, th tr:nth-child(odd) td {
+.table-container .table tr:nth-child(odd) td,
+.table-container td:nth-child(even) tr:nth-child(odd) td,
+.table-container tr tr:nth-child(odd) td,
+.table-container th tr:nth-child(odd) td {
   background-color: #ffffff;
   color: #000000;
   font-weight: 600;
 }
-.table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth-child(even) td, th tr:nth-child(even) td {
+.table-container .table tr:nth-child(even) td,
+.table-container td:nth-child(even) tr:nth-child(even) td,
+.table-container tr tr:nth-child(even) td,
+.table-container th tr:nth-child(even) td {
   background-color: rgb(218, 214, 214);
   color: #000000;
   font-weight: 600;
+}
+
+mark {
+  background-color: rgb(187, 250, 187);
 }
 
 .description-col {

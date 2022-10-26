@@ -29,10 +29,13 @@ body {
     position: absolute;
     display: none;
     flex-direction: row;
-        .modal-header {
-            background-color: #ffffff;
-            border: 1px solid grey;
-            padding: 10px;      
+        .modal-head {
+            display: flex;      
+            p {
+                background-color: #ffffff;
+                border: 1px solid grey;
+                padding: 10px;
+            }
         }
 }
 

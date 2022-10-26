@@ -21,7 +21,7 @@
         <div>
           <button class="menu-item checked-list">checked list</button>
           <div class="modal">
-            <div >
+            <div class="modal-head">
               <p class="modal-header">Item name</p>
               <p class="modal-header">Quantity</p>
               <p class="modal-header">Catalog #</p> 
@@ -32,6 +32,8 @@
         
         <a href="/" class="menu-item print"><img src="../static/svg/print-svgrepo-com.svg" alt="" class="print-svg"></a>
         <a href="/addItem" class="menu-item">Add Item</a>
+         
+
         <!-- <a href="/" class="menu-item">Main Page</a> -->
         <form action="{{url_for('search')}}" class="warehouse-select-form">
           <select  name="q" id="" class="warehouse-select">

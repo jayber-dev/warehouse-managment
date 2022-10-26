@@ -78,7 +78,10 @@ body {
   display: none;
   flex-direction: row;
 }
-.modal .modal-header {
+.modal .modal-head {
+  display: flex;
+}
+.modal .modal-head p {
   background-color: #ffffff;
   border: 1px solid grey;
   padding: 10px;

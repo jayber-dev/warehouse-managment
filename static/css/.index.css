@@ -108,6 +108,21 @@ body {
   color: #000000;
   font-weight: 600;
 }
+.modal .modal-delete-btn {
+  display: flex;
+  border: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  align-content: center;
+}
+.modal .modal-delete-btn .delete-svg {
+  width: 20px;
+  height: auto;
+}
 
 .header {
   text-align: center;

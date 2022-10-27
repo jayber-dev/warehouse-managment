@@ -58,8 +58,9 @@ checkBox.forEach(element => {
         if(e.target.checked) {
             const rowData = JSON.stringify({
                 id: e.target.id,
-                warehouseName : rowElement.childNodes[3].innerText,
+                // warehouseName : rowElement.childNodes[3].innerText,
                 itemName: rowElement.childNodes[5].innerText,
+                quantity: '0',
                 catalogId : rowElement.childNodes[11].innerText,
                 })
             localStorage.setItem(`${e.target.id}`,rowData)
@@ -80,15 +81,14 @@ list.addEventListener('click', () => {
     } else {
         modal.style.display = "flex"
     }
-   
-    
-    
 })
+
+
 
 // ------------------- modal table creator --------------------
 
 // console.log(document.querySelectorAll('.modal'))
-const modalTable = document.querySelector('.modal-items')
+const modalTable = document.querySelector('.modal-tbody')
 
 const data = new Array()
 
@@ -99,14 +99,19 @@ for(i in localStorage){
 }
 
 for(let i=0;i<data.length;i++){
-    for(item in data[i]){
-        const pElem = document.createElement('p')
-        pElem.textContent = item
-        console.log(i.warehouseName);
-        modalTable.appendChild(pElem)
+    const tr = document.createElement('tr')
+    modalTable.appendChild(tr)
+    for(k in data[i]){
+        console.log(data[i][k])
+        if(k != "id") {
+        const pElem = document.createElement('td')
+        pElem.textContent = data[i][k]
+        tr.appendChild(pElem)
+        }
     }
-    
-    
+    const pElem = document.createElement('td')
+    pElem.innerHTML = '<button type="submit"  class="modal-delete-btn"><img src="../static/svg/delete-svgrepo-com (1).svg" alt="" class="delete-svg"><small class="info">delete</small></button>'
+    tr.appendChild(pElem)
 }
 
 

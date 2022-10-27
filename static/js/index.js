@@ -70,21 +70,6 @@ checkBox.forEach(element => {
     })
 });
 
-// ------------------- modal handler --------------------------
-const modal = document.querySelector('.modal')
-const list = document.querySelector('.checked-list')
-
-list.addEventListener('click', () => {
-    console.log(modal.style.display);
-    if(modal.style.display === 'flex') {
-        modal.style.display = "none"
-    } else {
-        modal.style.display = "flex"
-    }
-})
-
-
-
 // ------------------- modal table creator --------------------
 
 // console.log(document.querySelectorAll('.modal'))
@@ -101,17 +86,49 @@ for(i in localStorage){
 for(let i=0;i<data.length;i++){
     const tr = document.createElement('tr')
     modalTable.appendChild(tr)
+    let pElem = document.createElement('td')
+    pElem.innerHTML = `<input type="checkbox" name="" id="${data[i].id}"></input>`
+    tr.appendChild(pElem)
     for(k in data[i]){
+        
         console.log(data[i][k])
         if(k != "id") {
-        const pElem = document.createElement('td')
-        pElem.textContent = data[i][k]
-        tr.appendChild(pElem)
+            pElem = document.createElement('td')
+            pElem.textContent = data[i][k]
+            tr.appendChild(pElem)
         }
     }
-    const pElem = document.createElement('td')
+    pElem = document.createElement('td')
     pElem.innerHTML = '<button type="submit"  class="modal-delete-btn"><img src="../static/svg/delete-svgrepo-com (1).svg" alt="" class="delete-svg"><small class="info">delete</small></button>'
     tr.appendChild(pElem)
 }
+
+// ------------------- modal handler --------------------------
+const modal = document.querySelector('.modal')
+const list = document.querySelector('.checked-list')
+const modalDeleteBtn = document.querySelectorAll('.modal-delete-btn')
+console.log(modalDeleteBtn);
+
+modalDeleteBtn.forEach(elem => {
+    elem.addEventListener('click', (e) => {
+        delete (e.target.parentElement.parentElement.parentElement);
+    })
+
+})
+
+list.addEventListener('click', () => {
+    console.log(modal.style.display);
+    if(modal.style.display === 'flex') {
+        modal.style.display = "none"
+    } else {
+        modal.style.display = "flex"
+    }
+})
+
+
+
+
+
+
 
 

@@ -76,26 +76,37 @@ body {
   position: absolute;
   display: none;
   flex-direction: column;
+  background-color: #082970;
+  justify-content: center;
+  box-shadow: 0 10px 10px 5px gray;
 }
-.modal .modal-headers {
-  display: flex;
-  margin: 0px;
+.modal table {
+  direction: rtl;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #ffffff;
+  border-collapse: collapse;
+  border: 1px solid #ffffff;
 }
-.modal .modal-headers p {
-  background-color: #ffffff;
-  border: 1px solid grey;
+.modal th {
   padding: 10px;
-  margin: 0px;
+  background-color: grey;
+  color: #000000;
+  font-weight: 600;
 }
-.modal .modal-items {
-  display: flex;
-  margin: 0px;
-}
-.modal .modal-items p {
+.modal tr:nth-child(odd) td {
   background-color: #ffffff;
-  border: 1px solid grey;
-  padding: 10px;
-  margin: 0px;
+  color: #000000;
+  font-weight: 600;
+}
+.modal tr:nth-child(even) td {
+  background-color: rgb(218, 214, 214);
+  color: #000000;
+  font-weight: 600;
 }
 
 .header {

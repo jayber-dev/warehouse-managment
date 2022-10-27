@@ -63,9 +63,6 @@ checkBox.forEach(element => {
                 catalogId : rowElement.childNodes[11].innerText,
                 })
             localStorage.setItem(`${e.target.id}`,rowData)
-            // localStorage.setItem(`${e.target.id} itemName`,rowElement.childNodes[5].innerText)
-            // localStorage.setItem(`${e.target.id} catalogId`,rowElement.childNodes[11].innerText)
-            // console.log(localStorage);
         } else if(!e.target.checked) {
             localStorage.removeItem(`${e.target.id}`)
         }       
@@ -77,7 +74,15 @@ const modal = document.querySelector('.modal')
 const list = document.querySelector('.checked-list')
 
 list.addEventListener('click', () => {
-    modal.style.display = "flex"
+    console.log(modal.style.display);
+    if(modal.style.display === 'flex') {
+        modal.style.display = "none"
+    } else {
+        modal.style.display = "flex"
+    }
+   
+    
+    
 })
 
 // ------------------- modal table creator --------------------

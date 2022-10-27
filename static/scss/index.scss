@@ -29,28 +29,46 @@ body {
   position: absolute;
   display: none;
   flex-direction: column;
+  background-color: #082970;
+  justify-content: center;
+  box-shadow: 0 10px 10px 5px gray;
+  
+  table {
+    direction: rtl;
+  // margin-top: 10px;
+  // margin-right: 10px;
+  // margin-left: 10px;
+  // margin-bottom: 10px;
+  font-weight: 600;
 
-  .modal-headers {
-    display: flex;
-    margin: 0px;
-    p {
-      background-color: #ffffff;
-      border: 1px solid grey;
-      padding: 10px;
-      margin: 0px;
-    }
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #ffffff;
+  border-collapse: collapse;
+  border: 1px solid #ffffff;
+  // border-style: groove;
+  }
+  th {
+    padding: 10px;
+    background-color: grey;
+    color: #000000;
+    font-weight: 600;
+  }
+  tr:nth-child(odd) td {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 600;
   }
 
-  .modal-items {
-    display: flex;
-    margin: 0px;
-    p {
-      background-color: #ffffff;
-      border: 1px solid grey;
-      padding: 10px;
-      margin: 0px;
-    }
+  tr:nth-child(even) td {
+    background-color: rgb(218, 214, 214);
+    color: #000000;
+    font-weight: 600;
   }
+    
 }
 
 .header {

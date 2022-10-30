@@ -24,7 +24,6 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>check</th>
                   <th>Item name</th>   
                   <th>Quantity</th>
                   <th>Catalog #</th>
@@ -34,24 +33,7 @@
                 </tr>
               </thead>
               <tbody class="modal-tbody">
-               
-                
-                <!-- <tr>
-                                        
-                  <td class="item-name"></td>
-                  <td></td>
-                  
-                  <td></td> -->
-                  
-                  <!-- <td class="hidden-col">
-                      <button type="submit"  class="delete-btn"><img src="../static/svg/delete-svgrepo-com (1).svg" alt="" class="delete-svg"><small class="info">delete</small></button>
-                  </td>
-                   
-                </tr> --> 
-              
-                
-      
-                
+                 
               </tbody>
             </table>
           </div>
@@ -113,11 +95,11 @@
             <td class="time">{{item[6][2:10:]}}</td>
             <td class="hidden-col">
                 <form action='/item_delete/{{item[0]}}' method="get">
-                <button type="submit"  class="delete-btn"><img src="../static/svg/delete-svgrepo-com (1).svg" alt="" class="delete-svg"><small class="info">delete</small></button>
+                <button type="submit"  class="delete-btn"><img src="../static/svg/delete-svgrepo-com (1).svg" alt="" class="delete-svg"><small class="info">Delete</small></button>
                 </form>
             </td>
             <td class="hidden-col">
-                <a href="{{url_for('item_update',row_id=item[0],warehouse=item[1],item=item[2],quantity=item[4],description=item[3],catalogId=item5)}}" class="update" ><img src="../static/svg/pencil-edit-button-svgrepo-com.svg" alt="" class="pencil"><small class="update">update</small></a>
+                <a href="{{url_for('item_update',row_id=item[0],warehouse=item[1],item=item[2],quantity=item[4],description=item[3],catalogId=item5)}}" class="update" ><img src="../static/svg/pencil-edit-button-svgrepo-com.svg" alt="" class="pencil"><small class="update">Update</small></a>
             </td>   
           </tr>
         

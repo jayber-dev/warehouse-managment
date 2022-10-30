@@ -21,7 +21,6 @@ function create_modal() {
         modalTable.appendChild(tr)
         for (k in data[i]) {
 
-            console.log(data[i][k])
             if (k != "id") {
                 if (k == 'quantity') {
                     pElem = document.createElement('td')
@@ -46,6 +45,47 @@ function create_modal() {
 
 create_modal()
 
+// ------------------------ SHOW MODAL -----------------------
+const modal = document.querySelector('.modal')
+const list = document.querySelector('.checked-list')
+const modalDeleteBtn = document.querySelectorAll('.modal-delete-btn')
+
+modalDeleteBtn.forEach(elem => {
+    elem.addEventListener('click', (e) => {
+        delete (e.target.parentElement.parentElement.parentElement);
+    })
+
+})
+
+list.addEventListener('click', () => {
+    if (modal.style.display === 'flex') {
+        modal.style.display = "none"
+    } else {
+        modal.style.display = "flex"
+        create_modal()
+    }
+})
+
+// --------------------------- copy to clipboard handler -----------
+const copyBtn = document.querySelector('.modal-copy-btn')
+
+copyBtn.addEventListener('click', () => {
+    let dataString = ""
+    const itemName = document.querySelectorAll('.itemName')
+    const quantity = document.querySelectorAll('.modal-quantity-input')
+    const catalogId = document.querySelectorAll('.catalogId')
+    for(let i = 0;i < itemName.length;i++) {
+        dataString += `item:${itemName[i].innerText}
+        quantity:${quantity[i].value} 
+        catalog-id:${catalogId[i].innerText}\n 
+        ----------------------------------\n`
+    }
+    navigator.clipboard.writeText(dataString).then(()=> {
+        console.log("text copied");
+    })
+    
+})
+
 //  --------------------------search handler -----------------------
 
 deleteBtn.forEach((element) => {
@@ -60,7 +100,6 @@ printBtn.addEventListener('click', (e) => {
     e.preventDefault()
     window.print()
 })
-
 
 const warehouseName = document.querySelectorAll('.warehouse-col')
 const descriptionCol = document.querySelectorAll('.description-col')
@@ -105,7 +144,6 @@ checkBox.forEach(element => {
         if (e.target.checked) {
             const rowData = JSON.stringify({
                 id: e.target.id,
-                // warehouseName : rowElement.childNodes[3].innerText,
                 itemName: rowElement.childNodes[5].innerText,
                 quantity: '0',
                 catalogId: rowElement.childNodes[11].innerText,
@@ -113,35 +151,9 @@ checkBox.forEach(element => {
             localStorage.setItem(`${e.target.id}`, rowData)
         } else if (!e.target.checked) {
             localStorage.removeItem(`${e.target.id}`)
-
         }
     })
-
-
 });
-
-// ------------------------ SHOW MODAL -----------------------
-const modal = document.querySelector('.modal')
-const list = document.querySelector('.checked-list')
-const modalDeleteBtn = document.querySelectorAll('.modal-delete-btn')
-console.log(modalDeleteBtn);
-
-modalDeleteBtn.forEach(elem => {
-    elem.addEventListener('click', (e) => {
-        delete (e.target.parentElement.parentElement.parentElement);
-    })
-
-})
-
-list.addEventListener('click', () => {
-    console.log(modal.style.display);
-    if (modal.style.display === 'flex') {
-        modal.style.display = "none"
-    } else {
-        modal.style.display = "flex"
-        create_modal()
-    }
-})
 
 
 

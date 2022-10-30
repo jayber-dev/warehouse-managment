@@ -23,25 +23,22 @@ body {
 }
 
 .modal {
-  direction: ltr;
+  // direction: ltr;
   padding: 0px;
 //   margin: 0px;
   position: absolute;
   display: none;
   flex-direction: column;
-  background-color: #082970;
+  background-color: #fecda5;
   justify-content: center;
-  box-shadow: 0 10px 10px 5px gray;
+  box-shadow: 0 5px 5px 5px black;
+  height: fit-content;
   
-  table {
-    direction: rtl;
-  // margin-top: 10px;
-  // margin-right: 10px;
-  // margin-left: 10px;
-  // margin-bottom: 10px;
-  font-weight: 600;
 
-  text-align: center;
+  table { 
+  direction: rtl;
+  font-weight: 600;
+  text-align: ceter;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
@@ -49,8 +46,8 @@ body {
   color: #ffffff;
   border-collapse: collapse;
   border: 1px solid #ffffff;
-  // border-style: groove;
   }
+
   th {
     padding: 10px;
     background-color: grey;
@@ -61,12 +58,14 @@ body {
     background-color: #ffffff;
     color: #000000;
     font-weight: 600;
+    padding: 10px;
   }
 
   tr:nth-child(even) td {
     background-color: rgb(218, 214, 214);
     color: #000000;
     font-weight: 600;
+    padding: 10px;
   }
 
   .modal-delete-btn {
@@ -85,7 +84,50 @@ body {
       height: auto;
     }
   }
-    
+   
+  .modal-quantity-input{
+    text-align: center;
+    width: 48px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid grey;
+    background-color: transparent;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .modal-quantity-input:focus {
+    outline: none;
+    border:0px;
+  }
+
+  .modal-copy-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+    text-align: center;
+    background-color: transparent;
+    width: 100%;
+    height: 50px ;
+    border: 1px solid grey;
+
+    img {
+      width: 40px ;
+      height: 40px;
+    }
+  }
+
+  .modal-copy-btn:hover {
+    background-color:aliceblue ;
+  }
+
 }
 
 .header {

@@ -21,21 +21,28 @@
         <div>
           <button class="menu-item checked-list">checked list</button>
           <div class="modal">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Item name</th>   
-                  <th>Quantity</th>
-                  <th>Catalog #</th>
-                  
-                  <th class="hidden-col">Delete</th>
-                  
-                </tr>
-              </thead>
-              <tbody class="modal-tbody">
-                 
-              </tbody>
-            </table>
+            <div class="modal-table-container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Item name</th>   
+                    <th>Quantity</th>
+                    <th>Catalog #</th>
+                    
+                    <!-- <th class="hidden-col">Delete</th> -->
+                    
+                  </tr>
+                </thead>
+                <tbody class="modal-tbody">
+                   
+                </tbody>
+              </table>
+              <button class="modal-copy-btn">
+                <p>copy to clipboard </p>
+                <img src="../static/ico/211649_clipboard_icon.png" alt="">
+              </button>
+            </div>
+            
           </div>
         </div>
         

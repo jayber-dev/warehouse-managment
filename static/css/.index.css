@@ -71,19 +71,20 @@ body {
 }
 
 .modal {
-  direction: ltr;
   padding: 0px;
   position: absolute;
   display: none;
   flex-direction: column;
-  background-color: #082970;
+  background-color: #fecda5;
   justify-content: center;
-  box-shadow: 0 10px 10px 5px gray;
+  box-shadow: 0 5px 5px 5px black;
+  height: fit-content;
+  /* Chrome, Safari, Edge, Opera */
 }
 .modal table {
   direction: rtl;
   font-weight: 600;
-  text-align: center;
+  text-align: ceter;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
@@ -102,11 +103,13 @@ body {
   background-color: #ffffff;
   color: #000000;
   font-weight: 600;
+  padding: 10px;
 }
 .modal tr:nth-child(even) td {
   background-color: rgb(218, 214, 214);
   color: #000000;
   font-weight: 600;
+  padding: 10px;
 }
 .modal .modal-delete-btn {
   display: flex;
@@ -122,6 +125,42 @@ body {
 .modal .modal-delete-btn .delete-svg {
   width: 20px;
   height: auto;
+}
+.modal .modal-quantity-input {
+  text-align: center;
+  width: 48px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid grey;
+  background-color: transparent;
+}
+.modal input::-webkit-outer-spin-button,
+.modal input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.modal .modal-quantity-input:focus {
+  outline: none;
+  border: 0px;
+}
+.modal .modal-copy-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px;
+  text-align: center;
+  background-color: transparent;
+  width: 100%;
+  height: 50px;
+  border: 1px solid grey;
+}
+.modal .modal-copy-btn img {
+  width: 40px;
+  height: 40px;
+}
+.modal .modal-copy-btn:hover {
+  background-color: aliceblue;
 }
 
 .header {

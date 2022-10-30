@@ -26,7 +26,7 @@ function create_modal() {
                 if (k == 'quantity') {
                     pElem = document.createElement('td')
                     pElem.classList = k
-                    pElem.innerHTML = `<input type='number' class="modal-quantity-input" placeHlder="set quantity">`
+                    pElem.innerHTML = `<input type='number' class="modal-quantity-input" placeholder="quantity">`
                     tr.appendChild(pElem)
                 } else {
                     pElem = document.createElement('td')
@@ -38,13 +38,9 @@ function create_modal() {
             }
 
         }
-        // console.log(quantityElem);
-        // const quantityElem = document.querySelector('.quantity')
-        // const quantityText = quantityElem.textContent
-        // quantityElem.innerHTML = `<input class="modal-quantity" placeHolder="set quantity">`
-        pElem = document.createElement('td')
-        pElem.innerHTML = '<button type="submit"  class="modal-delete-btn"><img src="../static/svg/delete-svgrepo-com (1).svg" alt="" class="delete-svg"><small class="info">Remove</small></button>'
-        tr.appendChild(pElem)
+        // pElem = document.createElement('td')
+        // pElem.innerHTML = '<button type="submit"  class="modal-delete-btn"><img src="../static/svg/delete-svgrepo-com (1).svg" alt="" class="delete-svg"><small class="info">Remove</small></button>'
+        // tr.appendChild(pElem)
     }
 }
 
@@ -147,10 +143,7 @@ list.addEventListener('click', () => {
     }
 })
 
-// ---------------------- MODAL ADD SUBSTRUCT BUTTONS HANDLER -----------
 
-const addButton = document.querySelectorAll('.modal-add-btn')
-console.log(addButton)
 
 
 

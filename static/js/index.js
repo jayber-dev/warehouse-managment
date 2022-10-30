@@ -138,6 +138,8 @@ function checkedItemsBuilder() {
 
     checkBox.forEach(element => {
         element.addEventListener('change', (e) => {
+            
+            checkedListUpdate()
             const rowElement = e.target.parentElement.parentElement
 
             if (e.target.checked) {
@@ -152,7 +154,9 @@ function checkedItemsBuilder() {
                 localStorage.removeItem(`${e.target.id}`)
             }
         })
+        
     });
+    
 }
 
 checkedItemsBuilder()
@@ -197,7 +201,9 @@ checkAllBtn.addEventListener('click', () => {
         console.log(elem.checked);
         elem.checked = true;
     })
+    
     checkboxreader()
+    checkedListUpdate()
 })
 
 uncheckAll.addEventListener('click', () => {
@@ -206,11 +212,25 @@ uncheckAll.addEventListener('click', () => {
         element.checked = 0;
         localStorage.removeItem(`${element.id}`)
     })
-    console.log('all done');
     
+    console.log('all done');
+    checkedListUpdate()
 })
 
-
+// -------------------- PRODUCTS NUMBER ON CHECKED LIST HANDLER ----
+function checkedListUpdate() {
+    const checkedListBtn = document.querySelector('.checked-list');
+    const checkedBtn = document.querySelectorAll('.checkbox-btn');
+    let res = 0
+    checkedBtn.forEach((element) => {
+        if(element.checked === true) {
+            res += 1;
+        }
+    })
+    // const listLenght = modalTable.childNodes
+    checkedListBtn.textContent = `Checked list ${res}`
+}
+checkedListUpdate()
 
 
 

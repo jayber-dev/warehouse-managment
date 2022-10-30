@@ -228,7 +228,7 @@ function checkedListUpdate() {
         }
     })
     // const listLenght = modalTable.childNodes
-    checkedListBtn.textContent = `Checked list ${res}`
+    checkedListBtn.textContent = `Checked list (${res})`
 }
 checkedListUpdate()
 

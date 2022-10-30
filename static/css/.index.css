@@ -372,13 +372,14 @@ mark {
 .check-col {
   display: flex;
   flex-flow: row;
-  padding: 5px;
 }
 .check-col .uncheck-btn {
   background-color: transparent;
   border: 0px;
+  border-radius: 2px;
 }
 .check-col .uncheck-btn img {
+  padding: 5px;
   height: 15px;
   width: 15px;
 }
@@ -388,8 +389,10 @@ mark {
 .check-col .check-all-btn {
   background-color: transparent;
   border: 0px;
+  border-radius: 2px;
 }
 .check-col .check-all-btn img {
+  padding: 5px;
   height: 15px;
   width: 15px;
 }

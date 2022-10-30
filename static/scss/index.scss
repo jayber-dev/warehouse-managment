@@ -319,7 +319,6 @@ mark {
 }
 
 
-
 .description-col {
   // text-align: justify;
   max-height: 200px;
@@ -343,7 +342,41 @@ mark {
     width: 20px;
     height: auto;
   }
+
 }
+
+
+.check-col{
+  display: flex;
+  flex-flow: row;
+  padding: 5px;
+  .uncheck-btn {
+    background-color: transparent;
+    border:0px ;
+    img {
+      height: 15px;
+      width: 15px;
+    }
+  }
+  
+  .uncheck-btn:hover {
+    background-color: aliceblue;
+  }
+  
+  .check-all-btn {
+    background-color: transparent;
+    border: 0px;
+    img {
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  .check-all-btn:hover {
+    background-color: aliceblue;
+  }
+}
+
 
 .info {
   font-family: "Montserrat", sans-serif;

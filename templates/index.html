@@ -75,7 +75,18 @@
       <table class="table">
         <thead>
           <tr>
-            <th>check</th>
+            <th >
+              check
+              <div class="check-col">
+              <button class="uncheck-btn">
+                <img src="../static/ico/icons8-unchecked-checkbox-50.png" alt="">
+              </button>
+              <button class="check-all-btn">
+                <img src="../static/ico/icons8-checked-checkbox-50.png" alt="">
+              </button>
+              </div>
+
+            </th>
             <th class="warehouse-col" >Warehouse</th>
             <th>Item name</th>   
             <th>Description</th>
@@ -91,7 +102,7 @@
           
           <tr>
             <td>
-              <input type="checkbox" name="" id="{{item[0]}}">
+              <input class="checkbox-btn" type="checkbox" name="" id="{{item[0]}}">
             </td>       
             <td class="warehouse-col">{{item[1]}}</td>              
             <td class="item-name">{{item[2]}}</td>

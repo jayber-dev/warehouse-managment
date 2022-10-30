@@ -74,16 +74,15 @@ copyBtn.addEventListener('click', () => {
     const itemName = document.querySelectorAll('.itemName')
     const quantity = document.querySelectorAll('.modal-quantity-input')
     const catalogId = document.querySelectorAll('.catalogId')
-    for(let i = 0;i < itemName.length;i++) {
+    for (let i = 0; i < itemName.length; i++) {
         dataString += `item:${itemName[i].innerText}
         quantity:${quantity[i].value} 
-        catalog-id:${catalogId[i].innerText}\n 
-        ----------------------------------\n`
+        catalog-id:${catalogId[i].innerText}\n----------------------------------\n`
     }
-    navigator.clipboard.writeText(dataString).then(()=> {
+    navigator.clipboard.writeText(dataString).then(() => {
         console.log("text copied");
     })
-    
+
 })
 
 //  --------------------------search handler -----------------------
@@ -127,33 +126,92 @@ itemName.forEach((elem) => {
 })
 
 // ---------------------------main screen checked items handler ---------------------
+function checkedItemsBuilder() {
+    const checkBox = document.querySelectorAll('input[type=checkbox]')
 
-const checkBox = document.querySelectorAll('input[type=checkbox]')
+    checkBox.forEach(element => {
+        let localStorageData = JSON.parse(localStorage.getItem(element.id))
+        if (localStorageData) {
+            element.checked = true
+        }
+    })
 
-checkBox.forEach(element => {
-    let localStorageData = JSON.parse(localStorage.getItem(element.id))
-    if (localStorageData) {
-        element.checked = true
-    }
-})
+    checkBox.forEach(element => {
+        element.addEventListener('change', (e) => {
+            const rowElement = e.target.parentElement.parentElement
 
-checkBox.forEach(element => {
-    element.addEventListener('change', (e) => {
-        const rowElement = e.target.parentElement.parentElement
+            if (e.target.checked) {
+                const rowData = JSON.stringify({
+                    id: e.target.id,
+                    itemName: rowElement.childNodes[5].innerText,
+                    quantity: '0',
+                    catalogId: rowElement.childNodes[11].innerText,
+                })
+                localStorage.setItem(`${e.target.id}`, rowData)
+            } else if (!e.target.checked) {
+                localStorage.removeItem(`${e.target.id}`)
+            }
+        })
+    });
+}
 
-        if (e.target.checked) {
+checkedItemsBuilder()
+
+//----------------------- CHECK BTN ADD TO LOCAL STORAGE ------------
+function checkboxreader() {
+    const checkBox = document.querySelectorAll('input[type=checkbox]')
+    checkBox.forEach(element => {
+        let localStorageData = JSON.parse(localStorage.getItem(element.id))
+        if (localStorageData) {
+            element.checked = true
+        }
+    })
+    
+    checkBox.forEach((elem) => {
+        // console.log(elem.parentElement.parentElement);
+        const rowElement = elem.parentElement.parentElement
+        // console.log(rowElement.childNodes);
+        // console.log(elem);
+        if (elem.checked) {
             const rowData = JSON.stringify({
-                id: e.target.id,
+                id: elem.id,
                 itemName: rowElement.childNodes[5].innerText,
                 quantity: '0',
                 catalogId: rowElement.childNodes[11].innerText,
             })
-            localStorage.setItem(`${e.target.id}`, rowData)
-        } else if (!e.target.checked) {
-            localStorage.removeItem(`${e.target.id}`)
+            localStorage.setItem(`${elem.id}`, rowData)
+        } else if (elem.checked === 0) {
+            localStorage.removeItem(`${elem.id}`)
         }
+    }) 
+    // console.log(checkBox);
+}
+
+// -------------------------- CHECK BUTTON HANDLER ------------------
+const checkAllBtn = document.querySelector('.check-all-btn');
+const checkedbox = document.querySelectorAll('.checkbox-btn');
+const uncheckAll = document.querySelector('.uncheck-btn');
+
+checkAllBtn.addEventListener('click', () => {
+    checkedbox.forEach((elem) => {
+        console.log(elem.checked);
+        elem.checked = true;
     })
-});
+    checkboxreader()
+})
+
+uncheckAll.addEventListener('click', () => {
+    checkedbox.forEach((element) => {
+        console.log(element.checked);
+        element.checked = 0;
+        localStorage.removeItem(`${element.id}`)
+    })
+    console.log('all done');
+    
+})
+
+
+
 
 
 

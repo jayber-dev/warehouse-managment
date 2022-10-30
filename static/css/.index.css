@@ -369,6 +369,34 @@ mark {
   height: auto;
 }
 
+.check-col {
+  display: flex;
+  flex-flow: row;
+  padding: 5px;
+}
+.check-col .uncheck-btn {
+  background-color: transparent;
+  border: 0px;
+}
+.check-col .uncheck-btn img {
+  height: 15px;
+  width: 15px;
+}
+.check-col .uncheck-btn:hover {
+  background-color: aliceblue;
+}
+.check-col .check-all-btn {
+  background-color: transparent;
+  border: 0px;
+}
+.check-col .check-all-btn img {
+  height: 15px;
+  width: 15px;
+}
+.check-col .check-all-btn:hover {
+  background-color: aliceblue;
+}
+
 .info {
   font-family: "Montserrat", sans-serif;
   font-size: x-small;

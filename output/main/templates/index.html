@@ -16,10 +16,51 @@
           <h1>Warehouse Managment</h1>
         </div>
       </header>
+      
       <nav class="menu">
+        <div>
+          <button class="menu-item checked-list">checked list</button>
+          <div class="modal">
+            <div class="modal-table-container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Item name</th>   
+                    <th>Quantity</th>
+                    <th>Catalog #</th>
+                    
+                    <!-- <th class="hidden-col">Delete</th> -->
+                    
+                  </tr>
+                </thead>
+                <tbody class="modal-tbody">
+                   
+                </tbody>
+              </table>
+              <button class="modal-copy-btn">
+                <p>copy to clipboard </p>
+                <img src="../static/ico/211649_clipboard_icon.png" alt="">
+              </button>
+            </div>
+            
+          </div>
+        </div>
+        
         <a href="/" class="menu-item print"><img src="../static/svg/print-svgrepo-com.svg" alt="" class="print-svg"></a>
         <a href="/addItem" class="menu-item">Add Item</a>
-        <a href="/" class="menu-item">Main Page</a>
+         
+
+        <!-- <a href="/" class="menu-item">Main Page</a> -->
+        <form action="{{url_for('search')}}" class="warehouse-select-form">
+          <select  name="q" id="" class="warehouse-select">
+            <option value="All warehouses">All warehouses</option>
+            {% for item in set_data %}
+              <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+          </select>
+          <button type="submit" class="warehouse-select-btn">Go</button>
+          
+        </form>
         
         <div class="search">
             <form action="{{url_for('search')}}" method="get">
@@ -29,10 +70,23 @@
           </div>
       </nav>
     </div>
+    
     <div class="table-container">
-      <table>
+      <table class="table">
         <thead>
           <tr>
+            <th class="checkbox-col">
+              check
+              <div class="check-col">
+              <button class="uncheck-btn">
+                <img src="../static/ico/icons8-unchecked-checkbox-50.png" alt="">
+              </button>
+              <button class="check-all-btn">
+                <img src="../static/ico/icons8-checked-checkbox-50.png" alt="">
+              </button>
+              </div>
+
+            </th>
             <th class="warehouse-col" >Warehouse</th>
             <th>Item name</th>   
             <th>Description</th>
@@ -46,9 +100,12 @@
         <tbody>
           {% for item in data %}
           
-          <tr>       
-            <td class="warehouse-col">{{item[1]}}</td>
-            <td>{{item[2]}}</td>
+          <tr>
+            <td class="checkbox-td-col">
+              <input class="checkbox-btn" type="checkbox" name="" id="{{item[0]}}">
+            </td>       
+            <td class="warehouse-col">{{item[1]}}</td>              
+            <td class="item-name">{{item[2]}}</td>
             <td class="description-col">{{item[3]}}</td>
             <td>{{item[4]}}</td>
             
@@ -56,11 +113,11 @@
             <td class="time">{{item[6][2:10:]}}</td>
             <td class="hidden-col">
                 <form action='/item_delete/{{item[0]}}' method="get">
-                <button type="submit"  class="delete-btn"><img src="../static/svg/delete-svgrepo-com (1).svg" alt="" class="delete-svg"><small class="info">delete</small></button>
+                <button type="submit"  class="delete-btn"><img src="../static/svg/delete-svgrepo-com (1).svg" alt="" class="delete-svg"><small class="info">Delete</small></button>
                 </form>
             </td>
             <td class="hidden-col">
-                <a href="{{url_for('item_update',row_id=item[0],warehouse=item[1],item=item[2],quantity=item[4],description=item[3],catalogId=item5)}}" class="update" ><img src="../static/svg/pencil-edit-button-svgrepo-com.svg" alt="" class="pencil"><small class="update">update</small></a>
+                <a href="{{url_for('item_update',row_id=item[0],warehouse=item[1],item=item[2],quantity=item[4],description=item[3],catalogId=item5)}}" class="update" ><img src="../static/svg/pencil-edit-button-svgrepo-com.svg" alt="" class="pencil"><small class="update">Update</small></a>
             </td>   
           </tr>
         

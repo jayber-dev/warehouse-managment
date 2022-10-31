@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
+.header {
+  display: flex;
+  justify-content: center;
+  direction: ltr;
+}
+.header a {
+  border: 1px solid grey;
+  padding: 8px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.header a img {
+  height: 40px;
+  width: 40px;
+}
+
 .form-container form {
   margin-top: 20px;
   direction: ltr;
@@ -52,11 +68,12 @@ html {
 }
 
 body {
+  position: relative;
   height: 100vh;
   direction: rtl;
   margin: 0;
   box-sizing: border-box;
-  background-color: #002D62;
+  background-color: #082970;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
 }
@@ -67,6 +84,99 @@ body {
   width: 100%;
   margin: 0px;
   padding: 0px;
+}
+
+.modal {
+  padding: 0px;
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  background-color: #fecda5;
+  justify-content: center;
+  box-shadow: 0 0px 5px 2px grey;
+  height: fit-content;
+  /* Chrome, Safari, Edge, Opera */
+}
+.modal table {
+  direction: rtl;
+  font-weight: 600;
+  text-align: ceter;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #ffffff;
+  border-collapse: collapse;
+  border: 1px solid #ffffff;
+}
+.modal th {
+  padding: 10px;
+  background-color: grey;
+  color: #000000;
+  font-weight: 600;
+}
+.modal tr:nth-child(odd) td {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+  padding: 10px;
+}
+.modal tr:nth-child(even) td {
+  background-color: rgb(218, 214, 214);
+  color: #000000;
+  font-weight: 600;
+  padding: 10px;
+}
+.modal .modal-delete-btn {
+  display: flex;
+  border: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  align-content: center;
+}
+.modal .modal-delete-btn .delete-svg {
+  width: 20px;
+  height: auto;
+}
+.modal .modal-quantity-input {
+  text-align: center;
+  width: 48px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid grey;
+  background-color: transparent;
+}
+.modal input::-webkit-outer-spin-button,
+.modal input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.modal .modal-quantity-input:focus {
+  outline: none;
+  border: 0px;
+}
+.modal .modal-copy-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px;
+  text-align: center;
+  background-color: transparent;
+  width: 100%;
+  height: 50px;
+  border: 1px solid lightgrey;
+}
+.modal .modal-copy-btn img {
+  width: 40px;
+  height: 40px;
+}
+.modal .modal-copy-btn:hover {
+  background-color: aliceblue;
 }
 
 .header {
@@ -99,6 +209,48 @@ body {
 .menu .print .print-svg {
   width: 22px;
 }
+.menu .checked-list {
+  background-color: #fecda5;
+  padding: 7px;
+  border-radius: 2px;
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+  font-weight: 300;
+  max-width: 170px;
+  border: 1px solid grey;
+}
+.menu .checked-list:hover {
+  background-color: aliceblue;
+}
+.menu .warehouse-select-form {
+  margin-left: 17px;
+}
+.menu .warehouse-select-form .warehouse-select {
+  background-color: #fecda5;
+  padding: 7px;
+  border-radius: 2px;
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+  font-weight: 300;
+  max-width: 170px;
+}
+.menu .warehouse-select-form .warehouse-select:hover {
+  background-color: aliceblue;
+}
+.menu .warehouse-select-form .warehouse-select-btn {
+  padding: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+  font-weight: 300;
+  max-width: 170px;
+  margin-left: 5px;
+  background-color: transparent;
+  border-radius: 2px;
+  border: 1px solid grey;
+}
+.menu .warehouse-select-form .warehouse-select-btn:hover {
+  background-color: aliceblue;
+}
 .menu a {
   border: 1px solid grey;
   padding: 8px;
@@ -118,6 +270,7 @@ body {
   border-radius: 2px;
   border: 0px;
   padding: 11px;
+  border: 1px solid grey;
 }
 .menu .search input[type=submit] {
   background-color: transparent;
@@ -127,7 +280,7 @@ body {
   font-weight: 300;
   font-size: medium;
   padding-left: 11px;
-  padding-top: 10px;
+  padding-top: 9px;
   padding-bottom: 10px;
   width: 70px;
 }
@@ -146,12 +299,14 @@ th {
   margin-top: 160px;
   margin-bottom: 50px;
 }
-
-table, td:nth-child(even), tr, th {
+.table-container .table,
+.table-container td:nth-child(even),
+.table-container tr,
+.table-container th {
   margin-top: 10px;
   margin-right: 20px;
   margin-left: 20px;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -162,28 +317,49 @@ table, td:nth-child(even), tr, th {
   border: 1px solid #ffffff;
   border-style: groove;
 }
-table .warehouse-col, td:nth-child(even) .warehouse-col, tr .warehouse-col, th .warehouse-col {
+.table-container .table .warehouse-col,
+.table-container td:nth-child(even) .warehouse-col,
+.table-container tr .warehouse-col,
+.table-container th .warehouse-col {
   max-width: 150px;
 }
-table .time, td:nth-child(even) .time, tr .time, th .time {
+.table-container .table .time,
+.table-container td:nth-child(even) .time,
+.table-container tr .time,
+.table-container th .time {
   direction: ltr;
   padding: 0px;
   margin: 0px;
   width: 0px;
 }
-table th, td:nth-child(even) th, tr th, th th {
+.table-container .table th,
+.table-container td:nth-child(even) th,
+.table-container tr th,
+.table-container th th {
   padding: 10px;
   background-color: grey;
-  color: #272626;
+  color: #000000;
   font-weight: 600;
 }
-table tr:nth-child(odd) td, td:nth-child(even) tr:nth-child(odd) td, tr tr:nth-child(odd) td, th tr:nth-child(odd) td {
+.table-container .table tr:nth-child(odd) td,
+.table-container td:nth-child(even) tr:nth-child(odd) td,
+.table-container tr tr:nth-child(odd) td,
+.table-container th tr:nth-child(odd) td {
   background-color: #ffffff;
-  color: #272626;
+  color: #000000;
+  font-weight: 600;
 }
-table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth-child(even) td, th tr:nth-child(even) td {
+.table-container .table tr:nth-child(even) td,
+.table-container td:nth-child(even) tr:nth-child(even) td,
+.table-container tr tr:nth-child(even) td,
+.table-container th tr:nth-child(even) td {
   background-color: rgb(218, 214, 214);
-  color: #272626;
+  color: #000000;
+  font-weight: 600;
+}
+
+mark {
+  background-color: rgb(187, 250, 187);
 }
 
 .description-col {
@@ -207,6 +383,37 @@ table tr:nth-child(even) td, td:nth-child(even) tr:nth-child(even) td, tr tr:nth
 .delete-btn .delete-svg {
   width: 20px;
   height: auto;
+}
+
+.check-col {
+  display: flex;
+  flex-flow: row;
+}
+.check-col .uncheck-btn {
+  background-color: transparent;
+  border: 0px;
+  border-radius: 2px;
+}
+.check-col .uncheck-btn img {
+  padding: 5px;
+  height: 15px;
+  width: 15px;
+}
+.check-col .uncheck-btn:hover {
+  background-color: aliceblue;
+}
+.check-col .check-all-btn {
+  background-color: transparent;
+  border: 0px;
+  border-radius: 2px;
+}
+.check-col .check-all-btn img {
+  padding: 5px;
+  height: 15px;
+  width: 15px;
+}
+.check-col .check-all-btn:hover {
+  background-color: aliceblue;
 }
 
 .info {
@@ -264,6 +471,12 @@ footer .copyrights {
     width: 20px;
     height: 20px;
     margin: 0px;
+  }
+  .checkbox-col {
+    display: none;
+  }
+  .checkbox-td-col {
+    display: none;
   }
   .update {
     display: none;

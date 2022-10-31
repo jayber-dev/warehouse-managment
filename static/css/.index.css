@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
+.header {
+  display: flex;
+  justify-content: center;
+  direction: ltr;
+}
+.header a {
+  border: 1px solid grey;
+  padding: 8px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.header a img {
+  height: 40px;
+  width: 40px;
+}
+
 .form-container form {
   margin-top: 20px;
   direction: ltr;

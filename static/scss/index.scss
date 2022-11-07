@@ -23,22 +23,47 @@ body {
 }
 
 .modal {
+  
   // direction: ltr;
-  padding: 0px;
+  // padding: 20px;
 //   margin: 0px;
   position: absolute;
   display: none;
   flex-direction: column;
   background-color: #fecda5;
-  justify-content: center;
+  // justify-content: center;
   box-shadow: 0 0px 5px 2px grey;
   height: fit-content;
+  width: fit-content;
+  border-radius: 10px;
   
+  
+  .modal-table-container {
+    border-radius: 10px;
+    min-height: 0px;
+    max-height: 600px;
+    overflow-x: none;
+    overflow-y: scroll;
+  }
+
+  .modal-table-container::-webkit-scrollbar-track {
+    box-shadow: inset 0 0px 10px 1px grey; 
+    border-radius: 10px;
+  }
+  
+  .modal-table-container::-webkit-scrollbar-thumb {
+    background: #082970; 
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
 
   table { 
   direction: rtl;
   font-weight: 600;
-  text-align: ceter;
+  // text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
@@ -134,7 +159,7 @@ body {
   text-align: center;
   border-bottom: 1px solid black;
   padding: 5px;
-  background-color: #fecda5;
+  background-color: #F2F2EA;
   h1 {
     padding: 0px;
     font-family: "Montserrat", sans-serif;
@@ -149,7 +174,7 @@ body {
   width: 100%;
   display: flex;
   padding: 5px;
-  background-color: #fecda5;
+  background-color: #F2F2EA;
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -163,7 +188,7 @@ body {
   }
 
   .checked-list {
-    background-color: #fecda5;
+    background-color: #F2F2EA;
     padding: 7px;
     border-radius: 2px;
     font-family: "Montserrat", sans-serif;
@@ -174,13 +199,14 @@ body {
   }
 
   .checked-list:hover {
-    background-color: aliceblue;
+    background-color: #fecda5;
+    cursor: pointer;
   }
 
   .warehouse-select-form {
     margin-left: 17px;
     .warehouse-select {
-      background-color: #fecda5;
+      background-color: #F2F2EA;
       padding: 7px;
       border-radius: 2px;
       font-family: "Montserrat", sans-serif;
@@ -190,7 +216,8 @@ body {
     }
 
     .warehouse-select:hover {
-      background-color: aliceblue;
+      background-color: #fecda5;
+      cursor: pointer;
     }
 
     .warehouse-select-btn {
@@ -206,7 +233,8 @@ body {
     }
 
     .warehouse-select-btn:hover {
-      background-color: aliceblue;
+      background-color: #fecda5;
+      cursor: pointer;
     }
   }
 
@@ -217,7 +245,8 @@ body {
     text-decoration: none;
   }
   a:hover {
-    background-color: aliceblue;
+    background-color: #fecda5;
+    cursor: pointer;
   }
   .menu-item {
     margin-left: 20px;
@@ -248,7 +277,8 @@ body {
     }
 
     input[type="submit"]:hover {
-      background-color: aliceblue;
+      background-color: #fecda5;
+      cursor: pointer;
     }
   }
 }

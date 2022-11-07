@@ -2,13 +2,13 @@ from flask import Flask, render_template, request,redirect,url_for
 import sqlite3 as sq
 import datetime
 import webbrowser as wb
-import dbinsert
+# import dbinsert
 
 
 
 conn = sq.connect('data.db')
-cur = sq.Cursor(conn)
 
+cur = sq.Cursor(conn)
 cur.execute('''CREATE TABLE IF NOT EXISTS warehouse (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     warehouse_name TEXT NOT NULL, 
@@ -20,7 +20,6 @@ cur.execute('''CREATE TABLE IF NOT EXISTS warehouse (
     ''')
 
 conn.commit()
-
 app = Flask(__name__)
 
 @app.route('/',)
@@ -90,10 +89,12 @@ def item_update(row_id):
         cur.close()
         print('im in post method')
         return redirect(url_for('index'))
+
     conn = sq.connect('data.db')    
     cur = sq.Cursor(conn)
     cur.execute('''SELECT * FROM warehouse''')
     query_data = cur.fetchall()
+    # print(query_data)
     warehouse_names = set()
     for i in range(len(query_data)):
         warehouse_names.add(query_data[i][1])
@@ -126,5 +127,6 @@ def search():
 
 
 if (__name__ == '__main__'):
+    
     wb.open(url="http://127.0.0.1:5000")
     app.run(debug=True)

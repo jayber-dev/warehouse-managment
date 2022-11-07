@@ -126,7 +126,10 @@ def search():
         return render_template('index.html', data=query_data, q_param=search_query, set_data=warehouse_names)
 
 
+
 if (__name__ == '__main__'):
     
     wb.open(url="http://127.0.0.1:5000")
-    app.run(debug=True)
+    app.run(debug=False)
+    
+    

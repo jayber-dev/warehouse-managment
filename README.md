@@ -1,5 +1,5 @@
 # warehouse-managment
-built for: Technion Dormitories for their needs by the client request \n
+built for: Technion Dormitories for their needs by the client request   
 Built by: Evgeny Bershadsky
 
 source code:
